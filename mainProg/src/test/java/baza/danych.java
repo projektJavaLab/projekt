@@ -9,4 +9,5 @@ public class danych {
     public String [][]dyski;
     public String [][]karty_graficzne;
     public String [][]karty_dzwiekowe;
+    public String [][]zasilacze;
 }
