@@ -1,0 +1,2 @@
+1 zasilacz1 100
+2 zasilacz2 200

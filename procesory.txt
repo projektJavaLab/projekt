@@ -1,0 +1,2 @@
+1 procesor1 100
+2 procesor2 200

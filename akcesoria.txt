@@ -1,0 +1,2 @@
+1 akcesorium1 100
+2 akcesorium2 200
