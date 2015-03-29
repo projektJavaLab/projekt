@@ -6,4 +6,4 @@ https://github.com/projektJavaLab/projekt/wiki
 
 ///////////////////////////////////////////////
 
-Projekt wersja 0.1 pre alpha
+Projekt wersja 0.1 pre alpha.
