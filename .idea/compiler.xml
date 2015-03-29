@@ -26,5 +26,8 @@
         <module name="mainProg" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mainProg" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
