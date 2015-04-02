@@ -11,6 +11,7 @@ public class start {
     public static void main(String[] args) throws FileNotFoundException {
         // wczytanie do bazy z plików listy części
         // wczytywanie obudów
+        /*
         Scanner skaner_obudowy = new Scanner(new BufferedReader(new FileReader("obudowy.txt")));
         for (int i = 0; i < 2; i++)
             for (int j = 0; j < 3; j++)
@@ -39,7 +40,7 @@ public class start {
         for (int i = 0; i < 2; i++)
             for (int j = 0; j < 3; j++)
                 if(skaner_akcesoria.hasNext())
-                    danych.akcesoria[i][j] = skaner_akcesoria.next();
+                    danych.ACCESSORY[i][j] = skaner_akcesoria.next();
         // wczytywanie dysków
         Scanner skaner_dyski = new Scanner(new BufferedReader(new FileReader("dyski.txt")));
         for (int i = 0; i < 2; i++)
@@ -75,14 +76,24 @@ public class start {
         for (int i = 0; i < 2; i++)
             for (int j = 0; j < 3; j++)
                 if(skaner_oprogramowanie.hasNext())
-                    danych.oprogramowanie[i][j] = skaner_oprogramowanie.next();
+                    danych.SOFTWARE[i][j] = skaner_oprogramowanie.next();
+        */
+        // // wczytywanie monitorów
+        Scanner skaner_monitory = new Scanner(new BufferedReader(new FileReader("monitory.txt")));
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 5; j++)
+                if(skaner_monitory.hasNext())
+                    danych.SCREEN[i][j] = skaner_monitory.next();
+        // test
         wypisanie();
         //
     }
     public static void wypisanie() {
-        String str = danych.procesory[1][1];
-        System.out.println(str);
-        String str2 = danych.obudowy[1][1];
-        System.out.println(str2);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(danych.SCREEN[i][j].replace("_", " ")+" ");
+            }
+            System.out.println("");
+        }
     }
 }
