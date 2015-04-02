@@ -1,0 +1,2 @@
+1 chlodzenie1 100
+2 chlodzenie2 200
