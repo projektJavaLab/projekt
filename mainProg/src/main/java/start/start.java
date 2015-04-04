@@ -39,8 +39,17 @@ public class start {
         output.readStringTab("napedy.txt", danych.DRIVE);
         // test
         output.writeStringTab(danych.SCREEN);
+        System.out.println("");
         output.writeStringTab(danych.SOFTWARE);
+        System.out.println("");
         output.writeStringTab(danych.ACCESSORY);
+        System.out.println("");
+        output.writeStringTab(danych.RAM);
+        System.out.println("");
+        output.writeStringTab(danych.PROCESSOR);
+        System.out.println("");
+        output.writeStringTab(danych.HARDDRIVE);
+        System.out.println("");
         //
     }
 }
