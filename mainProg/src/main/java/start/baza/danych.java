@@ -8,7 +8,7 @@ public class danych {
     public static String [][]RAM=new String [10][7];
     public static String [][]ACCESSORY=new String [3][5];
     public static String [][]HARDDRIVE=new String [10][6];
-    public static String [][]GRAPHICCARD=new String [2][3];
+    public static String [][]GRAPHICCARD=new String [10][7];
     public static String [][]SOUNDCARD=new String [2][3];
     public static String [][]POWERSUPPLY=new String [2][3];
     public static String [][]OS=new String [2][3];
@@ -30,4 +30,20 @@ ID || NAZWA || CENA || STAN MAGAZYNOWY || OPIS/KOMENTARZ
 // akcesoria - ACCESSORY
 /*
 ID || NAZWA || CENA || STAN MAGAZYNOWY || OPIS/KOMENTARZ
+ */
+// procesory - PROCESSOR
+/*
+ID || PRODUCENT || MODEL || RDZENIE || TAKTOWANIE || SOCKET || STAN MAGAZYNOWY || CENA
+ */
+// RAM - RAM
+/*
+ID || TYP || PRODUCENT || WIELKOŚĆ (GB) || TAKTOWANIE || STAN MAGAZYNOWY || CENA
+ */
+// dyski - HARDDRIVE
+/*
+ID || TYP || PRODUCENT || POJEMNOŚĆ (TB) || STAN MAGAZYNOWY || CENA
+ */
+// karty graficzne - GRAPHICCARD
+/*
+ID || PRODUCENT || GEFORCE/RADEON || MODEL || PAMIĘĆ (GB) || STAN MAGAZYNOWY || CENA
  */

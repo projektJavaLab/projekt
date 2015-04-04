@@ -50,6 +50,8 @@ public class start {
         System.out.println("");
         output.writeStringTab(danych.HARDDRIVE);
         System.out.println("");
+        output.writeStringTab(danych.GRAPHICCARD);
+        System.out.println("");
         //
     }
 }
