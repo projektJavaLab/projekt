@@ -52,6 +52,14 @@ public class start {
         System.out.println("");
         output.writeStringTab(danych.GRAPHICCARD);
         System.out.println("");
+        output.writeStringTab(danych.DRIVE);
+        System.out.println("");
+        output.writeStringTab(danych.MOTHERBOARD);
+        System.out.println("");
+        output.writeStringTab(danych.OS);
+        System.out.println("");
+        output.writeStringTab(danych.POWERSUPPLY);
+        System.out.println("");
         //
     }
 }

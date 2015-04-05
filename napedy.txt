@@ -1,5 +1,5 @@
-1 ASUS E-Green 24x Wewnętrzny CD/DVD SATA 4 80
+1 ASUS E-Green_24x Wewnętrzny CD/DVD SATA 4 80
 2 ASUS BW-12D1S-U Zewnętrzny CD/DVD/Blu-ray USB3.0 3 550
 3 Lite-On DVD-ROM Wewnętrzny CD/DVD SATA 5 70
 4 LG BD-R Wewnętrzny CD/DVD/Blu-ray SATA 2 310
-5 Sony Optiarc DVD+/-RW ATA 8 100
+5 Sony Optiarc Wewnętrzny DVD+/-RW ATA 8 100
