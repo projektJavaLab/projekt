@@ -1,3 +1,10 @@
-1 Logitech_2.0_Z200 99 4 Jakiś_komenatarz_tutaj1
-2 Logitech_MK520_Wireless_Desktop 159 3 Jakiś_komenatarz_tutaj2
-3 Creative_HS-720_czarno-srebrne_z_mikrofonem 109 5 Jakiś_komenatarz_tutaj3
+1 Logitech_2.0_Z200 99 4 Głośniki
+2 Logitech_MK520_Wireless_Desktop 159 3 Myszka+klawiatura
+3 Creative_HS-720_czarno-srebrne_z_mikrofonem 109 5 Słuchawki_z_mikrofonem
+4 NVIDIA_SHIELD_Wireless_Controller 249 3 Gamepad
+5 Creative_HS-​330_Headset_czarne_z_mikrofonem 46 10 Słuchawki_z_mikrofonem
+6 Creative_HS-​390_Headset_czarne_z_mikrofonem 59 8 Słuchawki_z_mikrofonem
+7 Gembird_VGA_D-​SUB_M/​M_HQ_3m_ekranowany_(ferryt)_czarny 19 10 Kabel
+8 Gembird_HDMI/​HDMI_Micro_v1.4_1.8m_A-​D_pozłacany 29 10 Kabel
+9 Logitech_M185_szara 49 5 Mysz
+10 Microsoft_Arc_Keyboard_czarna_USB 150 2 Klawiatura
