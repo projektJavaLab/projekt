@@ -55,7 +55,7 @@ ID || PRODUCENT || MODEL || PORTY525" || PORTY35" || MAX WYS. CHŁODZENIA || STA
 /*
 ID || PRODUCENT || MODEL || RODZAJ || ROZMIAR || STAN MAG. || CENA
  */
-// karty sieciowe - NIC
+//karty sieciowe - ?
 /*
 ID || PRODUCENT || MODEL || RODZAJ || PREDKOSC || STAN MAG. || CENA
  */
