@@ -60,6 +60,14 @@ public class start {
         System.out.println("");
         output.writeStringTab(danych.POWERSUPPLY);
         System.out.println("");
+        output.writeStringTab(danych.CASE);
+        System.out.println("");
+        output.writeStringTab(danych.NIC);
+        System.out.println("");
+        output.writeStringTab(danych.COOLING);
+        System.out.println("");
+        output.writeStringTab(danych.SOUNDCARD);
+        System.out.println("");
         //
     }
 }
