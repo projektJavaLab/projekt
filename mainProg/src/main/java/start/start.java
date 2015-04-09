@@ -37,7 +37,8 @@ public class start {
         output.readStringTab("chlodzenie.txt", danych.COOLING);
         // wczytywanie napędów
         output.readStringTab("napedy.txt", danych.DRIVE);
-        // test
+        // testowanie
+        /*
         output.writeStringTab(danych.SCREEN);
         System.out.println("");
         output.writeStringTab(danych.SOFTWARE);
@@ -68,6 +69,7 @@ public class start {
         System.out.println("");
         output.writeStringTab(danych.SOUNDCARD);
         System.out.println("");
+        */
         //
     }
 }
