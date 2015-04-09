@@ -1,6 +1,7 @@
 package start;
 
 import start.baza.danych;
+import start.configuration.Main;
 
 import java.io.FileNotFoundException;
 
@@ -38,7 +39,7 @@ public class start {
         // wczytywanie napędów
         output.readStringTab("napedy.txt", danych.DRIVE);
         // testowanie
-        /*
+
         output.writeStringTab(danych.SCREEN);
         System.out.println("");
         output.writeStringTab(danych.SOFTWARE);
@@ -69,7 +70,12 @@ public class start {
         System.out.println("");
         output.writeStringTab(danych.SOUNDCARD);
         System.out.println("");
-        */
-        //
+
+        // TU BĘDZIE JAKIEŚ MENU (switch ?)
+        // zaczynamy konfiguracje
+        Main.start();
+        // sprzedaż
+        // wznowienie konfiguracji
+
     }
 }
