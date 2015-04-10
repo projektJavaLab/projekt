@@ -1,10 +1,14 @@
 package start.configuration;
 
-/**
- * Created by mslaby on 2015-04-09.
- */
-public class Processor {
-    static void List() {
-        System.out.println("oto procesory");
+public class Processor extends Main {
+    public void List() {
+    }
+    public double Price() {
+        double price = 0;
+        return price;
+    }
+    public int ID() {
+        int id=0;
+        return id;
     }
 }

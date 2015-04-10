@@ -1,7 +1,14 @@
 package start.configuration;
 
-/**
- * Created by Michał on 2015-04-09.
- */
-public class PowerSupply {
+public class PowerSupply extends Main{
+    public void List() {
+    }
+    public double Price() {
+        double price = 0;
+        return price;
+    }
+    public int ID() {
+        int id=0;
+        return id;
+    }
 }
