@@ -1,7 +1,7 @@
 package start;
 
 import start.baza.danych;
-import start.configuration.Main;
+import start.configuration.Run;
 
 import java.io.FileNotFoundException;
 
@@ -73,7 +73,7 @@ public class start {
 
         // TU BĘDZIE JAKIEŚ MENU (switch ?)
         // zaczynamy konfiguracje
-        Main.start();
+        Run.Start();
         // sprzedaż
         // wznowienie konfiguracji
 
