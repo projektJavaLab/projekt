@@ -16,7 +16,7 @@ public class danych {
     public static String [][]SCREEN=new String [10][5];
     public static String [][]COOLING=new String [14][7];
     public static String [][]NIC=new String [7][7];
-    public static String [][]DRIVE=new String [5][8];
+    public static String [][]DRIVE=new String [4][8];
 }
 
 // monitory - SCREEN
@@ -55,7 +55,7 @@ ID || PRODUCENT || MODEL || PORTY525" || PORTY35" || MAX WYS. CHŁODZENIA || STA
 /*
 ID || PRODUCENT || MODEL || RODZAJ || ROZMIAR || STAN MAG. || CENA
  */
-//karty sieciowe - ?
+//karty sieciowe - NIC
 /*
 ID || PRODUCENT || MODEL || RODZAJ || PREDKOSC || STAN MAG. || CENA
  */
