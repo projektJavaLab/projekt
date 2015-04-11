@@ -13,6 +13,7 @@ public class Run {
         //Dodatki
         Adds adds = new Adds();
         String add=adds.Do();
+        System.out.println(add);
     }
 
 }
