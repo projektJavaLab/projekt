@@ -24,7 +24,15 @@ public class Case extends Main{
     public String Acc() {
         String Sid="";
         List();
+        int temp;
 
+            temp = ID();
+            if(temp==-1) {
+                Sid += temp;
+            }
+            Sid += ",";
+            Sid += Price(temp);
+            Sid += ";";
         return Sid;
     }
 }
