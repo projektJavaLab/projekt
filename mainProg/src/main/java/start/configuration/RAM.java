@@ -22,7 +22,7 @@ public class RAM extends Main{
         id = in.nextInt();
         return id-1;
     }
-    public String Acc() {
+    public String Do() {
         String Sid="";
         List();
         int temp;

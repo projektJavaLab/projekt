@@ -21,18 +21,15 @@ public class Case extends Main{
         id = in.nextInt();
         return id-1;
     }
-    public String Acc() {
+    public String Do() {
         String Sid="";
         List();
         int temp;
-
-            temp = ID();
-            if(temp==-1) {
-                Sid += temp;
-            }
-            Sid += ",";
-            Sid += Price(temp);
-            Sid += ";";
+        temp = ID();
+        Sid += temp;
+        Sid += ",";
+        Sid += Price(temp);
+        Sid += ";";
         return Sid;
     }
 }
