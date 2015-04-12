@@ -12,7 +12,7 @@ public class RAM extends Main{
     }
 
     public double Price(int id) {
-        String p = danych.RAM[id][2];
+        String p = danych.RAM[id][6];
         return Double.parseDouble(p);
     }
     public int ID() {

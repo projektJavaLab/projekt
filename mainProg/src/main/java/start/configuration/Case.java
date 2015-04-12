@@ -11,7 +11,7 @@ public class Case extends Main{
         output.writeStringTab(danych.CASE);
     }
     public double Price(int id) {
-        String p = danych.CASE[id][2];
+        String p = danych.CASE[id][8];
         return Double.parseDouble(p);
     }
     public int ID() {
@@ -24,15 +24,7 @@ public class Case extends Main{
     public String Acc() {
         String Sid="";
         List();
-        int temp;
-        while (true){
-            temp = ID();
-            if(temp==-1) break;
-            Sid += temp;
-            Sid += ",";
-            Sid += Price(temp);
-            Sid += ";";
-        }
+
         return Sid;
     }
 }
