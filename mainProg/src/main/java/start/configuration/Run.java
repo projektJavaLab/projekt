@@ -14,6 +14,22 @@ public class Run {
     public void Start() {
         // Definicje
         Adds adds = new Adds();
+        RAM ram = new RAM();
+        Case ca = new Case();
+        // Ram
+        String Ram =ram.Do();
+        StringTokenizer st2 = new StringTokenizer(Ram, ",;");
+        while(st2.hasMoreTokens()) {
+            Konf[2]+=st2.nextToken()+",";
+            Price +=Double.parseDouble(st2.nextToken());
+        }
+        // Obudowa
+        String Ca =ca.Do();
+        StringTokenizer st3 = new StringTokenizer(Ca, ",;");
+        while(st3.hasMoreTokens()) {
+            Konf[3]+=st3.nextToken()+",";
+            Price +=Double.parseDouble(st3.nextToken());
+        }
         // Akcesoria
         String Acc =adds.Acc();
         StringTokenizer st7 = new StringTokenizer(Acc, ",;");
@@ -72,6 +88,9 @@ public class Run {
             Konf[14]+=st14.nextToken()+",";
             Price +=Double.parseDouble(st14.nextToken());
         }
+        System.out.println("Konfiguracja: "+Konf[0]+"|"+Konf[1]+"|"+Konf[2]+"|"+Konf[3]+"|"+Konf[4]+"|"+Konf[5]+"|"+Konf[6]+"|"+Konf[7]+"|"+Konf[8]+"|"+Konf[9]+"|"+Konf[10]+"|"+Konf[11]+"|"+Konf[12]+"|"+Konf[13]+"|"+Konf[14]);
+        System.out.println("Cena: "+Price);
+        System.out.println("Moc: "+Power);
     }
 
 }
