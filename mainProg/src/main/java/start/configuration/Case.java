@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Case extends Main{
     public void List() {
-        System.out.println("ID || PRODUCENT || MODEL || PORTY 525" || PORTY 35" || MAX WYS. || CHLODZENIA || STAN MAGAZYNOWY || CENA");
+        System.out.println("ID || PRODUCENT || MODEL || PORTY 525 || PORTY 35 || MAX WYS. || CHLODZENIA || STAN MAGAZYNOWY || CENA");
         output.writeStringTab(danych.CASE);
     }
     public double Price(int id) {
