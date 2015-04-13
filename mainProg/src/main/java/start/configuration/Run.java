@@ -16,6 +16,9 @@ public class Run {
         Adds adds = new Adds();
         RAM ram = new RAM();
         Case ca = new Case();
+        GraphicCard gc = new GraphicCard();
+        HardDrive hdd = new HardDrive();
+        PowerSupply psu = new PowerSupply();
         // Ram
         String Ram =ram.Do();
         StringTokenizer st2 = new StringTokenizer(Ram, ",;");
@@ -30,6 +33,29 @@ public class Run {
             Konf[3]+=st3.nextToken()+",";
             Price +=Double.parseDouble(st3.nextToken());
         }
+
+        // Zasilacz
+        String Psu =psu.Psupp();
+        StringTokenizer st4 = new StringTokenizer(Psu, ",;");
+        while(st4.hasMoreTokens()) {
+            Konf[4]+=st4.nextToken()+",";
+            Price +=Double.parseDouble(st4.nextToken());
+        }
+        // Dysk twardy
+        String Hdd =hdd.Hdd();
+        StringTokenizer st5 = new StringTokenizer(Hdd, ",;");
+        while(st5.hasMoreTokens()) {
+            Konf[5]+=st5.nextToken()+",";
+            Price +=Double.parseDouble(st5.nextToken());
+        }
+        // Karta graficzna
+        String Gc =gc.Gcard();
+        StringTokenizer st6 = new StringTokenizer(Gc, ",;");
+        while(st6.hasMoreTokens()) {
+            Konf[6]+=st6.nextToken()+",";
+            Price +=Double.parseDouble(st6.nextToken());
+        }
+
         // Akcesoria
         String Acc =adds.Acc();
         StringTokenizer st7 = new StringTokenizer(Acc, ",;");
