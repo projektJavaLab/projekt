@@ -7,12 +7,16 @@ import java.util.Scanner;
 
 public class GraphicCard extends Main{
     public void List() {
-        System.out.println("ID || PRODUCENT || GEFORCE/RADEON || MODEL || PAMIĘĆ (GB) || STAN MAGAZYNOWY || CENA");
+        System.out.println("ID || PRODUCENT || GEFORCE/RADEON || MODEL || PAMIĘĆ (GB) || POBÓR MOCY || STAN MAGAZYNOWY || CENA");
         output.writeStringTab(danych.GRAPHICCARD);
     }
     public double Price(int id) {
-        String p = danych.GRAPHICCARD[id][6];
+        String p = danych.GRAPHICCARD[id][7];
         return Double.parseDouble(p);
+    }
+    public int Power(int id) {
+        String p = danych.GRAPHICCARD[id][5];
+        return Integer.parseInt(p);
     }
     public int ID() {
         int id=0;
@@ -31,6 +35,8 @@ public class GraphicCard extends Main{
             Sid += temp;
             Sid += ",";
             Sid += Price(temp);
+            Sid += ",";
+            Sid += Power(temp);
             Sid += ";";
         }
         return Sid;

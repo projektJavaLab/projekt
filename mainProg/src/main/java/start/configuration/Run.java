@@ -54,6 +54,7 @@ public class Run {
         while(st6.hasMoreTokens()) {
             Konf[6]+=st6.nextToken()+",";
             Price +=Double.parseDouble(st6.nextToken());
+            Power +=Integer.parseInt(st6.nextToken());
         }
 
         // Akcesoria

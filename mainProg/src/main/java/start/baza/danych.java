@@ -8,7 +8,7 @@ public class danych {
     public static String [][]RAM=new String [10][7];
     public static String [][]ACCESSORY=new String [10][5];
     public static String [][]HARDDRIVE=new String [10][6];
-    public static String [][]GRAPHICCARD=new String [10][7];
+    public static String [][]GRAPHICCARD=new String [10][8];
     public static String [][]SOUNDCARD=new String [6][8];
     public static String [][]POWERSUPPLY=new String [10][6];
     public static String [][]OS=new String [8][7];
@@ -45,7 +45,7 @@ ID || TYP || PRODUCENT || POJEMNOŚĆ (TB) || STAN MAGAZYNOWY || CENA
  */
 // karty graficzne - GRAPHICCARD
 /*
-ID || PRODUCENT || GEFORCE/RADEON || MODEL || PAMIĘĆ (GB) || STAN MAGAZYNOWY || CENA
+ID || PRODUCENT || GEFORCE/RADEON || MODEL || PAMIĘĆ (GB) || POBÓR MOCY || STAN MAGAZYNOWY || CENA
  */
 // obudowy - CASE
 /*

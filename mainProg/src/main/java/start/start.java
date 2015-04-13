@@ -72,8 +72,8 @@ public class start {
 
         // TU BĘDZIE JAKIEŚ MENU (switch ?)
         // zaczynamy konfiguracje
-        //Run run=new Run();
-        //run.Start();
+        Run run=new Run();
+        run.Start();
         // wznowienie konfiguracji
         // sprzedaż
 
