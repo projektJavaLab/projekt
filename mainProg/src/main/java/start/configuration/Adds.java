@@ -71,10 +71,12 @@ public class Adds extends Main{
         output.writeStringTab(danych.OS);
         int temp;
         temp = ID();
-        Sid += temp;
-        Sid += ",";
-        Sid += Double.parseDouble(danych.OS[temp][6]);
-        Sid += ";";
+        if(temp!=-1) {
+            Sid += temp;
+            Sid += ",";
+            Sid += Double.parseDouble(danych.OS[temp][6]);
+            Sid += ";";
+        }
         return Sid;
     }
     public String Co() {
@@ -98,10 +100,12 @@ public class Adds extends Main{
         output.writeStringTab(danych.NIC);
         int temp;
         temp = ID();
-        Sid += temp;
-        Sid += ",";
-        Sid += Double.parseDouble(danych.NIC[temp][6]);
-        Sid += ";";
+        if(temp!=-1) {
+            Sid += temp;
+            Sid += ",";
+            Sid += Double.parseDouble(danych.NIC[temp][6]);
+            Sid += ";";
+        }
         return Sid;
     }
     public String Sou() {
@@ -110,10 +114,12 @@ public class Adds extends Main{
         output.writeStringTab(danych.SOUNDCARD);
         int temp;
         temp = ID();
-        Sid += temp;
-        Sid += ",";
-        Sid += Double.parseDouble(danych.SOUNDCARD[temp][7]);
-        Sid += ";";
+        if(temp!=-1) {
+            Sid += temp;
+            Sid += ",";
+            Sid += Double.parseDouble(danych.SOUNDCARD[temp][7]);
+            Sid += ";";
+        }
         return Sid;
     }
     public String Dr() {
@@ -122,10 +128,12 @@ public class Adds extends Main{
         output.writeStringTab(danych.DRIVE);
         int temp;
         temp = ID();
-        Sid += temp;
-        Sid += ",";
-        Sid += Double.parseDouble(danych.DRIVE[temp][6]);
-        Sid += ";";
+        if(temp!=-1) {
+            Sid += temp;
+            Sid += ",";
+            Sid += Double.parseDouble(danych.DRIVE[temp][6]);
+            Sid += ";";
+        }
         return Sid;
     }
 }
