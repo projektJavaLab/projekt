@@ -23,7 +23,7 @@ public class Motherboard extends Main {
     public String Mb(String processor){
         String Sid="";
         List();
-        output.writeStringTabSelect(danych.MOTHERBOARD,4,processor);
+        output.writeStringTabSelect(danych.MOTHERBOARD, 4, processor);
         //output.writeStringTab(danych.MOTHERBOARD);
         int temp;
             temp = ID();
