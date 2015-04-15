@@ -27,16 +27,13 @@ public class Processor extends Main {
         String Sid="";
         List();
         int temp;
-        while (true){
-            temp = ID();
-            if(temp==-1) break;
-            Sid += temp;
-            Sid += ",";
-            Sid += Price(temp);
-            Sid += ",";
-            Sid += Socket(temp);
-            Sid += ";";
-        }
+        temp = ID();
+        Sid += temp;
+        Sid += ",";
+        Sid += Price(temp);
+        Sid += ",";
+        Sid += Socket(temp);
+        Sid += ";";
         return Sid;
     }
 }

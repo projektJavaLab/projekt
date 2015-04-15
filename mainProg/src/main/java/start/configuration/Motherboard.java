@@ -23,18 +23,14 @@ public class Motherboard extends Main {
     public String Mb(String processor){
         String Sid="";
         List();
-        parsedList(processor);
-        output.writeStringTab(danych.MOTHERBOARD);
+        output.writeStringTabSelect(danych.MOTHERBOARD,4,processor);
+        //output.writeStringTab(danych.MOTHERBOARD);
         int temp;
-        while (true){
             temp = ID();
-            if(temp==-1) break;
             Sid += temp;
             Sid += ",";
             Sid += Price(temp);
             Sid += ";";
-        }
         return Sid;
-    }
     }
 }

@@ -17,7 +17,7 @@ public class output {
         }
     }
 
-    public static void writeStringTabSelect(int col, String val){
+    public static void writeStringTabSelect(String[][] tab, int col, String val){
         String out;
         for (int i = 0; i < tab.length; i++) {
             out="";
@@ -26,7 +26,7 @@ public class output {
                 if(j<tab[i].length-1)
                     out+=" || ";
             }
-            if(tab[i][col]==val)
+            if(tab[i][col].equals(val))
                 System.out.println(out);
         }
     }
