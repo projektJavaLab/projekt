@@ -5,6 +5,8 @@ import java.util.StringTokenizer;
 public class Run {
     // cena konfiguracji
     double Price=0;
+    // socket
+    String Socket="";
     // tablica przechowująca indexy do częsci
     // 0-procesor, 1-płyta główna, 2-ram, 3-obudowa, 4-zasilacz, 5-dysk, 6-karta graficzna, 7-akcesoria, 8-monitory, 9-oprogramowanie, 10-systemy, 11-chłodzenie, 12-karty sieciowe, 13-karty dźwiękowe, 14-napędy
     String[] Konf= new String[]{"", "", "", "", "", "", "", "", "", "", "" ,"" ,"" ,"", "" };
@@ -19,6 +21,23 @@ public class Run {
         GraphicCard gc = new GraphicCard();
         HardDrive hdd = new HardDrive();
         PowerSupply psu = new PowerSupply();
+        Processor proc = new Processor();
+        Motherboard moth = new Motherboard();
+        // Procesor
+        String Pro =proc.Proc();
+        StringTokenizer st0 = new StringTokenizer(Pro, ",;");
+        while(st0.hasMoreTokens()) {
+            Konf[0]+=st0.nextToken()+",";
+            Price +=Double.parseDouble(st0.nextToken());
+            Socket +=st0.nextToken();
+        }
+        // Płyta główna
+        String Moth =moth.Mb(Socket);
+        StringTokenizer st1 = new StringTokenizer(Moth, ",;");
+        while(st1.hasMoreTokens()) {
+            Konf[1]+=st1.nextToken()+",";
+            Price +=Double.parseDouble(st1.nextToken());
+        }
         // Ram
         String Ram =ram.Do();
         StringTokenizer st2 = new StringTokenizer(Ram, ",;");
@@ -106,7 +125,7 @@ public class Run {
             Konf[13]+=st13.nextToken()+",";
             Price +=Double.parseDouble(st13.nextToken());
         }
-        if(Konf[13]!="")
+        if(Konf[13].equals(""))
             Power+=20;
         // Napędy
         String Dr =adds.Dr();

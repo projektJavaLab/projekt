@@ -10,11 +10,11 @@ public class Processor extends Main {
         output.writeStringTab(danych.PROCESSOR);
     }
     public double Price(int id) {
-        String p = danych.GRAPHICCARD[id][7];
+        String p = danych.PROCESSOR[id][7];
         return Double.parseDouble(p);
     }
     public String Socket(int id){
-        return danych.GRAPHICCARD[id][5];
+        return danych.PROCESSOR[id][5];
     }
     public int ID() {
         int id=0;
