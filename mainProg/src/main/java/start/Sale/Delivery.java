@@ -32,8 +32,8 @@ public class Delivery {
 
     private String getCode() {
         String yearStr = Integer.toString(this.year);
-        String lastDigit = yearStr.substring(yearStr.length() - 1);
-        return String.format(lastDigit + this.month + this.deliveryNum);
+        String lastDigits = yearStr.substring(yearStr.length() - 2);
+        return String.format(lastDigits + "0"+ this.month + "-" + this.deliveryNum);
     }
 
     private void getAdres() {
