@@ -1,5 +1,6 @@
 package start;
 
+import start.Sale.Delivery;
 import start.baza.danych;
 import start.configuration.Run;
 
@@ -74,6 +75,8 @@ public class start {
         // zaczynamy konfiguracje
         Run run=new Run();
         run.Start();
+        Delivery delivery= new Delivery(2015, 4, 1);
+        delivery.writeAdres(Delivery.ADRES);
         // wznowienie konfiguracji
         // sprzedaż
 
