@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class PowerSupply extends Main{
     public void List() {
         System.out.println("ID || Nazwa || Producent || MOC || STAN MAG. || CENA");
-        output.writeStringTab(danych.POWERSUPPLY);
+        //output.writeStringTab(danych.POWERSUPPLY);
     }
     public double Price(int id) {
         String p = danych.POWERSUPPLY[id][5];
@@ -21,9 +21,11 @@ public class PowerSupply extends Main{
         id = in.nextInt();
         return id-1;
     }
-    public String Psupp() {
+    public String Psupp(double Pow) {
         String Sid="";
+        Pow += 100; //rezerwa mocy
         List();
+        output.writeStringTabSelectPower(danych.POWERSUPPLY, 3, Pow);
         int temp;
         temp = ID();
         Sid += temp;
