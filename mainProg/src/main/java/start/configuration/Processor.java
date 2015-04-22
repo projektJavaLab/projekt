@@ -6,12 +6,16 @@ import java.util.Scanner;
 
 public class Processor extends Main {
     public void List() {
-        System.out.println("ID || PRODUCENT || MODEL || RDZENIE || TAKTOWANIE || SOCKET || STAN MAGAZYNOWY || CENA");
+        System.out.println("ID || PRODUCENT || MODEL || RDZENIE || TAKTOWANIE || SOCKET || STAN MAGAZYNOWY || CENA || TDP");
         output.writeStringTab(danych.PROCESSOR);
     }
     public double Price(int id) {
         String p = danych.PROCESSOR[id][7];
         return Double.parseDouble(p);
+    }
+    public int Power(int id) {
+        String p = danych.PROCESSOR[id][8];
+        return Integer.parseInt(p);
     }
     public String Socket(int id){
         return danych.PROCESSOR[id][5];
@@ -33,6 +37,8 @@ public class Processor extends Main {
         Sid += Price(temp);
         Sid += ",";
         Sid += Socket(temp);
+        Sid += ",";
+        Sid += Power(temp);
         Sid += ";";
         return Sid;
     }

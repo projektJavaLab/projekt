@@ -3,7 +3,7 @@ package start.baza;
 public class danych {
 
     public static String [][]CASE=new String [9][9];
-    public static String [][]PROCESSOR=new String [20][8];
+    public static String [][]PROCESSOR=new String [20][9];
     public static String [][]MOTHERBOARD=new String [10][8];
     public static String [][]RAM=new String [10][7];
     public static String [][]ACCESSORY=new String [10][5];
@@ -33,7 +33,7 @@ ID || NAZWA || CENA || STAN MAGAZYNOWY || RODZAJ
  */
 // procesory - PROCESSOR
 /*
-ID || PRODUCENT || MODEL || RDZENIE || TAKTOWANIE || SOCKET || STAN MAGAZYNOWY || CENA
+ID || PRODUCENT || MODEL || RDZENIE || TAKTOWANIE || SOCKET || STAN MAGAZYNOWY || CENA || MOC
  */
 // RAM - RAM
 /*

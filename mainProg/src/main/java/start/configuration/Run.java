@@ -11,7 +11,7 @@ public class Run {
     // 0-procesor, 1-płyta główna, 2-ram, 3-obudowa, 4-zasilacz, 5-dysk, 6-karta graficzna, 7-akcesoria, 8-monitory, 9-oprogramowanie, 10-systemy, 11-chłodzenie, 12-karty sieciowe, 13-karty dźwiękowe, 14-napędy
     String[] Konf= new String[]{"", "", "", "", "", "", "", "", "", "", "" ,"" ,"" ,"", "" };
     // potrzebna moc
-    double Power=0;
+    int Power=0;
     // funkcja konfigurująca
     public void Start() {
         // Definicje
@@ -30,6 +30,8 @@ public class Run {
             Konf[0]+=st0.nextToken()+",";
             Price +=Double.parseDouble(st0.nextToken());
             Socket +=st0.nextToken();
+            Power +=Integer.parseInt(st0.nextToken());
+
         }
         // Płyta główna
         String Moth =moth.Mb(Socket);
