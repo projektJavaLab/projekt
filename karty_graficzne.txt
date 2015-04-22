@@ -1,10 +1,10 @@
-1 Asus GeForce GT730 2 4 280
-2 Asus GeForce GT740 2 3 390
-3 Gigabyte GeForce GTX750 2 5 500
-4 Gigabyte GeForce GTX960 2 2 930
-5 MSI GeForce GTX980 4 4 2630
-6 Asus Radeon R7_240 2 4 270
-7 Gigabyte Radeon R7_260X 2 3 520
-8 MSI Radeon R9_270X 2 1 830
-9 SAPPHIRE Radeon R9_280 3 4 860
-10 Asus Radeon R9_290 4 2 1320
+1 Asus GeForce GT730 2 60 4 280
+2 Asus GeForce GT740 2 135 3 390
+3 Gigabyte GeForce GTX750 2 195 5 500
+4 Gigabyte GeForce GTX960 2 234 2 930
+5 MSI GeForce GTX980 4 197 4 2630
+6 Asus Radeon R7_240 2 122 4 270
+7 Gigabyte Radeon R7_260X 2 221 3 520
+8 MSI Radeon R9_270X 2 283 1 830
+9 SAPPHIRE Radeon R9_280 3 350 4 860
+10 Asus Radeon R9_290 4 400 2 1320

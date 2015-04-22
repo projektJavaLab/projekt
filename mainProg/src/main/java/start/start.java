@@ -1,6 +1,9 @@
 package start;
 
+import start.Sale.Delivery;
+import start.Sale.Main;
 import start.baza.danych;
+import start.configuration.Run;
 
 import java.io.FileNotFoundException;
 
@@ -38,38 +41,46 @@ public class start {
         // wczytywanie napędów
         output.readStringTab("napedy.txt", danych.DRIVE);
         // testowanie
-        /*
-        output.writeStringTab(danych.SCREEN);
-        System.out.println("");
-        output.writeStringTab(danych.SOFTWARE);
-        System.out.println("");
-        output.writeStringTab(danych.ACCESSORY);
-        System.out.println("");
-        output.writeStringTab(danych.RAM);
-        System.out.println("");
-        output.writeStringTab(danych.PROCESSOR);
-        System.out.println("");
-        output.writeStringTab(danych.HARDDRIVE);
-        System.out.println("");
-        output.writeStringTab(danych.GRAPHICCARD);
-        System.out.println("");
-        output.writeStringTab(danych.DRIVE);
-        System.out.println("");
-        output.writeStringTab(danych.MOTHERBOARD);
-        System.out.println("");
-        output.writeStringTab(danych.OS);
-        System.out.println("");
-        output.writeStringTab(danych.POWERSUPPLY);
-        System.out.println("");
-        output.writeStringTab(danych.CASE);
-        System.out.println("");
-        output.writeStringTab(danych.NIC);
-        System.out.println("");
-        output.writeStringTab(danych.COOLING);
-        System.out.println("");
-        output.writeStringTab(danych.SOUNDCARD);
-        System.out.println("");
-        */
-        //
+        //output.writeStringTab(danych.SCREEN);
+        //System.out.println("");
+        //output.writeStringTab(danych.SOFTWARE);
+        //System.out.println("");
+        //output.writeStringTab(danych.ACCESSORY);
+        //System.out.println("");
+        //output.writeStringTab(danych.RAM);
+        //System.out.println("");
+        //output.writeStringTab(danych.PROCESSOR);
+        //System.out.println("");
+        //output.writeStringTab(danych.HARDDRIVE);
+        //System.out.println("");
+        //output.writeStringTab(danych.GRAPHICCARD);
+        //System.out.println("");
+        //output.writeStringTab(danych.DRIVE);
+        //System.out.println("");
+        //output.writeStringTab(danych.MOTHERBOARD);
+        //System.out.println("");
+        //output.writeStringTab(danych.OS);
+        //System.out.println("");
+        //output.writeStringTab(danych.POWERSUPPLY);
+        //System.out.println("");
+        //output.writeStringTab(danych.CASE);
+        //System.out.println("");
+        //output.writeStringTab(danych.NIC);
+        //System.out.println("");
+        //output.writeStringTab(danych.COOLING);
+        //System.out.println("");
+        //output.writeStringTab(danych.SOUNDCARD);
+        //System.out.println("");
+
+        // TU BĘDZIE JAKIEŚ MENU (switch ?)
+        // zaczynamy konfiguracje
+        Run run=new Run();
+        run.Start();
+        //Main main = new Main();
+        //main.Start();
+        // wznowienie konfiguracji
+        // sprzedaż
+
+
     }
 }
