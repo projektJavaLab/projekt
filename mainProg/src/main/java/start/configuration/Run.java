@@ -37,13 +37,16 @@ public class Run {
         while(st1.hasMoreTokens()) {
             Konf[1]+=st1.nextToken()+",";
             Price +=Double.parseDouble(st1.nextToken());
+            Power +=50;
         }
+
         // Ram
         String Ram =ram.Do();
         StringTokenizer st2 = new StringTokenizer(Ram, ",;");
         while(st2.hasMoreTokens()) {
             Konf[2]+=st2.nextToken()+",";
             Price +=Double.parseDouble(st2.nextToken());
+            Power +=5;
         }
         // Karta graficzna
         String Gc =gc.Gcard();
@@ -66,6 +69,7 @@ public class Run {
         while(st5.hasMoreTokens()) {
             Konf[5]+=st5.nextToken()+",";
             Price +=Double.parseDouble(st5.nextToken());
+            Power +=10;
         }
         // Akcesoria
         String Acc =adds.Acc();
@@ -108,6 +112,7 @@ public class Run {
         while(st11.hasMoreTokens()) {
             Konf[11]+=st11.nextToken()+",";
             Price +=Double.parseDouble(st11.nextToken());
+            Power +=3;
         }
         // Karty dźwiękowe
         String Sou =adds.Sou();
@@ -115,18 +120,17 @@ public class Run {
         while(st12.hasMoreTokens()) {
             Konf[12]+=st12.nextToken()+",";
             Price +=Double.parseDouble(st12.nextToken());
-        }
-        if(Konf[12].equals(""))
             Power+=20;
-        // Napędy
+        }
+
         String Dr =adds.Dr();
         StringTokenizer st13 = new StringTokenizer(Dr, ",;");
         while(st13.hasMoreTokens()) {
             Konf[13]+=st13.nextToken()+",";
             Price +=Double.parseDouble(st13.nextToken());
+            Power+=25;
         }
 
-        // Zasilacz
         String Psu =psu.Psupp(Power);
         StringTokenizer st14 = new StringTokenizer(Psu, ",;");
         while(st14.hasMoreTokens()) {

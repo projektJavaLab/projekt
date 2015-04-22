@@ -26,11 +26,11 @@ public class Motherboard extends Main {
         output.writeStringTabSelect(danych.MOTHERBOARD, 4, processor);
         //output.writeStringTab(danych.MOTHERBOARD);
         int temp;
-            temp = ID();
-            Sid += temp;
-            Sid += ",";
-            Sid += Price(temp);
-            Sid += ";";
+        temp = ID();
+        Sid += temp;
+        Sid += ",";
+        Sid += Price(temp);
+        Sid += ";";
         return Sid;
     }
 }
