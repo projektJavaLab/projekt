@@ -1,7 +1,8 @@
 package start.configuration;
 
-/**
- * Created by Michał on 2015-04-09.
- */
-public class Main {
+public abstract class Main {
+    //
+    public abstract void List();
+    public abstract double Price(int id);
+    public abstract int ID();
 }
