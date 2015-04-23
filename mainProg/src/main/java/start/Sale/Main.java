@@ -10,5 +10,6 @@ public class Main {
         Zamowienie[0]= String.valueOf(Price);
         Delivery delivery = new Delivery(2015, 4, 1);
         delivery.writeAdres(Delivery.ADRES);
+        //
     }
 }
