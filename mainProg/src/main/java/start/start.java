@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 public class start {
     static double cena=0.0;
+    static String proc="";
+    static boolean koniec=true;
     public static void main(String[] args) throws FileNotFoundException {
         // wczytanie do bazy z plików listy części
         // wczytywanie obudów
@@ -75,28 +77,35 @@ public class start {
         //System.out.println("");
 
         // start
-        System.out.println("Wybierz co chcesz zrobic: k - konfiguracja, w - wznowienie konfiguracji, z - zakup");
+        while(koniec)
+        {
+        System.out.println("Wybierz co chcesz zrobic: k - konfiguracja, w - wznowienie konfiguracji, z - zakup, s - wyjscie");
         Scanner in = new Scanner(System.in);
         String wybor = in.nextLine();
         wybor.toLowerCase();
-        switch (wybor)
-        {
-            case "w":
-            {
-                // wznowienie konfiguracji
-            }
-            case "k":
-            {
-                // konfiguracja
-                Run run=new Run();
-                run.Start();
-                cena = run.Price;
-            }
-            case "z":
-            {
-                // sprzedaż
-                Main main = new Main();
-                main.Start(cena);
+            switch (wybor) {
+                case "w": {
+                    // wznowienie konfiguracji
+                    break;
+                }
+                case "k": {
+                    // konfiguracja
+                    Run run = new Run();
+                    run.Start();
+                    cena = run.Price;
+                    proc = run.Konf[0];
+                    break;
+                }
+                case "z": {
+                    // sprzedaz
+                    Main main = new Main();
+                    main.Start(cena, proc);
+                    break;
+                }
+                case "s": {
+                    // wyjscie
+                    return;
+                }
             }
         }
 
