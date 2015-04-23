@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 
 public class Run {
     // cena konfiguracji
-    double Price=0;
+     public double Price=0;
     // socket
     String Socket="";
     // tablica przechowująca indexy do częsci

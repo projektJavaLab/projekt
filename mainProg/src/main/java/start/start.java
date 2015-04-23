@@ -77,7 +77,7 @@ public class start {
         Run run=new Run();
         run.Start();
         //Main main = new Main();
-        //main.Start();
+        //main.Start(run.Price);
         // wznowienie konfiguracji
         // sprzedaż
 
