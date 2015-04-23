@@ -6,8 +6,10 @@ import start.baza.danych;
 import start.configuration.Run;
 
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class start {
+    static double cena=0.0;
     public static void main(String[] args) throws FileNotFoundException {
         // wczytanie do bazy z plików listy części
         // wczytywanie obudów
@@ -72,14 +74,33 @@ public class start {
         //output.writeStringTab(danych.SOUNDCARD);
         //System.out.println("");
 
-        // TU BĘDZIE JAKIEŚ MENU (switch ?)
-        // zaczynamy konfiguracje
-        Run run=new Run();
-        run.Start();
-        //Main main = new Main();
-        //main.Start(run.Price);
-        // wznowienie konfiguracji
-        // sprzedaż
+        // start
+        System.out.println("Wybierz co chcesz zrobic: k - konfiguracja, w - wznowienie konfiguracji, z - zakup");
+        Scanner in = new Scanner(System.in);
+        String wybor = in.nextLine();
+        wybor.toLowerCase();
+        switch (wybor)
+        {
+            case "w":
+            {
+                // wznowienie konfiguracji
+            }
+            case "k":
+            {
+                // konfiguracja
+                Run run=new Run();
+                run.Start();
+                cena = run.Price;
+            }
+            case "z":
+            {
+                // sprzedaż
+                Main main = new Main();
+                main.Start(cena);
+            }
+        }
+
+
 
 
     }

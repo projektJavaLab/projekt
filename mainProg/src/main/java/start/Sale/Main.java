@@ -8,6 +8,7 @@ public class Main {
     String[] Zamowienie=new String[4]; // 0 - cena, 1 - zniżka, 2 - sposob platnosci, 3- wysylka
     public void Start(double Price) {
         Zamowienie[0]= String.valueOf(Price);
+        System.out.println(Zamowienie[0]);
         Delivery delivery = new Delivery(2015, 4, 1);
         delivery.writeAdres(Delivery.ADRES);
         //
