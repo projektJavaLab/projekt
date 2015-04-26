@@ -3,6 +3,7 @@ package start;
 import start.Sale.Delivery;
 import start.Sale.Main;
 import start.baza.danych;
+import start.configuration.Resume;
 import start.configuration.Run;
 
 import java.io.FileNotFoundException;
@@ -86,11 +87,17 @@ public class start {
             switch (wybor) {
                 case "w": {
                     // wznowienie konfiguracji
+                    Run run = new Run();
+                    Resume resume = new Resume();
+                    resume.odczytKonf(run);
+                    resume.odczytCenaMoc(run);
+                    run.Start();
                     break;
                 }
                 case "k": {
                     // konfiguracja
                     Run run = new Run();
+                    run.Reset();
                     run.Start();
                     cena = run.Price;
                     proc = run.Konf[0];
