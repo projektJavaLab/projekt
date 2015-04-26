@@ -16,11 +16,11 @@ public class Resume {
         Scanner odczyt=new Scanner(plik1);
         while (odczyt.hasNextLine())
         {
-            StringTokenizer st0 = new StringTokenizer(odczyt.nextLine(), ",");
+            StringTokenizer st0 = new StringTokenizer(odczyt.nextLine(), ";");
             int i=0;
             while(st0.hasMoreTokens())
             {
-                run.Konf[i]+=st0.nextToken()+",";
+                run.Konf[i]+=st0.nextToken();
                 i++;
             }
         }

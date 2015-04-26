@@ -54,20 +54,20 @@ public class Run {
                 Price += Double.parseDouble(st0.nextToken());
                 Socket += st0.nextToken();
                 Power += Integer.parseInt(st0.nextToken());
-
-                //---------
-                try {
-                    zapis = new FileWriter("konfiguracja.txt", true);
-                    zapis.write(Konf[0]);
-                    zapis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                zapis2.print(Price + "," + Power);
-                zapis2.close();
-                //---------
             }
+            //---------
+            try {
+                zapis = new FileWriter("konfiguracja.txt", true);
+                zapis.write(Konf[0]);
+                zapis.write(";");
+                zapis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            zapis2.print(Price + "," + Power);
+            zapis2.close();
+            //---------
         }
 
         // Płyta główna
@@ -78,22 +78,21 @@ public class Run {
                 Konf[1] += st1.nextToken() + ",";
                 Price += Double.parseDouble(st1.nextToken());
                 Power += 50;
-
-                //---------
-                try {
-                    zapis = new FileWriter("konfiguracja.txt", true);
-                    zapis.write(Konf[1]);
-                    zapis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                zapis2 = new PrintWriter("cena-moc.txt");
-                zapis2.print(Price + "," + Power);
-                zapis2.close();
-                //---------
             }
+            //---------
+            try {
+                zapis = new FileWriter("konfiguracja.txt", true);
+                zapis.write(Konf[1]);
+                zapis.write(";");
+                zapis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            zapis2 = new PrintWriter("cena-moc.txt");
+            zapis2.print(Price + "," + Power);
+            zapis2.close();
+            //---------
         }
-
 
         // Ram
         if(Objects.equals(Konf[2], "")) {
@@ -108,6 +107,7 @@ public class Run {
             try {
                 zapis = new FileWriter("konfiguracja.txt", true);
                 zapis.write(Konf[2]);
+                zapis.write(";");
                 zapis.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -117,6 +117,7 @@ public class Run {
             zapis2.close();
             //---------
         }
+
         // Karta graficzna
         if(Objects.equals(Konf[3], "")) {
             String Gc = gc.Gcard();
@@ -125,11 +126,12 @@ public class Run {
                 Konf[3] += st3.nextToken() + ",";
                 Price += Double.parseDouble(st3.nextToken());
                 Power += Integer.parseInt(st3.nextToken());
-                }
+            }
             //---------
             try {
                 zapis = new FileWriter("konfiguracja.txt", true);
                 zapis.write(Konf[3]);
+                zapis.write(";");
                 zapis.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -139,6 +141,7 @@ public class Run {
             zapis2.close();
             //---------
         }
+
         // Obudowa
         if(Objects.equals(Konf[4], "")) {
             String Ca = ca.Do();
@@ -146,20 +149,22 @@ public class Run {
             while (st4.hasMoreTokens()) {
                 Konf[4] += st4.nextToken() + ",";
                 Price += Double.parseDouble(st4.nextToken());
-                //---------
-                try {
-                    zapis = new FileWriter("konfiguracja.txt", true);
-                    zapis.write(Konf[4]);
-                    zapis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                zapis2 = new PrintWriter("cena-moc.txt");
-                zapis2.print(Price + "," + Power);
-                zapis2.close();
-                //---------
             }
+            //---------
+            try {
+                zapis = new FileWriter("konfiguracja.txt", true);
+                zapis.write(Konf[4]);
+                zapis.write(";");
+                zapis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            zapis2 = new PrintWriter("cena-moc.txt");
+            zapis2.print(Price + "," + Power);
+            zapis2.close();
+            //---------
         }
+
         // Dysk twardy
         if(Objects.equals(Konf[5], "")) {
             String Hdd = hdd.Hdd();
@@ -168,11 +173,12 @@ public class Run {
                 Konf[5] += st5.nextToken() + ",";
                 Price += Double.parseDouble(st5.nextToken());
                 Power += 10;
-                }
+            }
             //---------
             try {
                 zapis = new FileWriter("konfiguracja.txt", true);
                 zapis.write(Konf[5]);
+                zapis.write(";");
                 zapis.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -182,6 +188,7 @@ public class Run {
             zapis2.close();
             //---------
         }
+
         // Akcesoria
         if(Objects.equals(Konf[6], "")) {
             String Acc = adds.Acc();
@@ -189,11 +196,12 @@ public class Run {
             while (st6.hasMoreTokens()) {
                 Konf[6] += st6.nextToken() + ",";
                 Price += Double.parseDouble(st6.nextToken());
-                }
+            }
             //---------
             try {
                 zapis = new FileWriter("konfiguracja.txt", true);
                 zapis.write(Konf[6]);
+                zapis.write(";");
                 zapis.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -203,6 +211,7 @@ public class Run {
             zapis2.close();
             //---------
         }
+
         // Monitory
         if(Objects.equals(Konf[7], "")) {
             String Scr = adds.Scr();
@@ -210,11 +219,12 @@ public class Run {
             while (st7.hasMoreTokens()) {
                 Konf[7] += st7.nextToken() + ",";
                 Price += Double.parseDouble(st7.nextToken());
-                }
+            }
             //---------
             try {
                 zapis = new FileWriter("konfiguracja.txt", true);
                 zapis.write(Konf[7]);
+                zapis.write(";");
                 zapis.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -224,6 +234,7 @@ public class Run {
             zapis2.close();
             //---------
         }
+
         // Systemy
         if(Konf[8]=="") {
             String Os = adds.Os();
@@ -231,20 +242,22 @@ public class Run {
             while (st8.hasMoreTokens()) {
                 Konf[8] += st8.nextToken() + ",";
                 Price += Double.parseDouble(st8.nextToken());
-                //---------
-                try {
-                    zapis = new FileWriter("konfiguracja.txt", true);
-                    zapis.write(Konf[8]);
-                    zapis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                zapis2 = new PrintWriter("cena-moc.txt");
-                zapis2.print(Price + "," + Power);
-                zapis2.close();
-                //---------
             }
+            //---------
+            try {
+                zapis = new FileWriter("konfiguracja.txt", true);
+                zapis.write(Konf[8]);
+                zapis.write(";");
+                zapis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            zapis2 = new PrintWriter("cena-moc.txt");
+            zapis2.print(Price + "," + Power);
+            zapis2.close();
+            //---------
         }
+
         // Oprogramowanie
         if(Objects.equals(Konf[9], "")) {
             String Sof = adds.Sof();
@@ -257,6 +270,7 @@ public class Run {
             try {
                 zapis = new FileWriter("konfiguracja.txt", true);
                 zapis.write(Konf[9]);
+                zapis.write(";");
                 zapis.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -266,6 +280,7 @@ public class Run {
             zapis2.close();
             //---------
         }
+
         // Chłodzenie
         if(Objects.equals(Konf[10], "")) {
             String Co = adds.Co();
@@ -278,6 +293,7 @@ public class Run {
             try {
                 zapis = new FileWriter("konfiguracja.txt", true);
                 zapis.write(Konf[10]);
+                zapis.write(";");
                 zapis.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -287,6 +303,7 @@ public class Run {
             zapis2.close();
             //---------
         }
+
         // Karty sieciowe
         if(Objects.equals(Konf[11], "")) {
             String Ni = adds.Ni();
@@ -295,19 +312,20 @@ public class Run {
                 Konf[11] += st11.nextToken() + ",";
                 Price += Double.parseDouble(st11.nextToken());
                 Power += 3;
-                //---------
-                try {
-                    zapis = new FileWriter("konfiguracja.txt", true);
-                    zapis.write(Konf[11]);
-                    zapis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                zapis2 = new PrintWriter("cena-moc.txt");
-                zapis2.print(Price + "," + Power);
-                zapis2.close();
-                //---------
             }
+            //---------
+            try {
+                zapis = new FileWriter("konfiguracja.txt", true);
+                zapis.write(Konf[11]);
+                zapis.write(";");
+                zapis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            zapis2 = new PrintWriter("cena-moc.txt");
+            zapis2.print(Price + "," + Power);
+            zapis2.close();
+            //---------
         }
         // Karty dźwiękowe
         if(Objects.equals(Konf[12], "")) {
@@ -317,19 +335,20 @@ public class Run {
                 Konf[12] += st12.nextToken() + ",";
                 Price += Double.parseDouble(st12.nextToken());
                 Power += 20;
-                //---------
-                try {
-                    zapis = new FileWriter("konfiguracja.txt", true);
-                    zapis.write(Konf[12]);
-                    zapis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                zapis2 = new PrintWriter("cena-moc.txt");
-                zapis2.print(Price + "," + Power);
-                zapis2.close();
-                //---------
             }
+            //---------
+            try {
+                zapis = new FileWriter("konfiguracja.txt", true);
+                zapis.write(Konf[12]);
+                zapis.write(";");
+                zapis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            zapis2 = new PrintWriter("cena-moc.txt");
+            zapis2.print(Price + "," + Power);
+            zapis2.close();
+            //---------
         }
 
         //Napęd
@@ -340,19 +359,20 @@ public class Run {
                 Konf[13] += st13.nextToken() + ",";
                 Price += Double.parseDouble(st13.nextToken());
                 Power += 25;
-                //---------
-                try {
-                    zapis = new FileWriter("konfiguracja.txt", true);
-                    zapis.write(Konf[13]);
-                    zapis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                zapis2 = new PrintWriter("cena-moc.txt");
-                zapis2.print(Price + "," + Power);
-                zapis2.close();
-                //---------
             }
+            //---------
+            try {
+                zapis = new FileWriter("konfiguracja.txt", true);
+                zapis.write(Konf[13]);
+                zapis.write(";");
+                zapis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            zapis2 = new PrintWriter("cena-moc.txt");
+            zapis2.print(Price + "," + Power);
+            zapis2.close();
+            //---------
         }
 
         //Zasilacz
@@ -362,19 +382,20 @@ public class Run {
             while (st14.hasMoreTokens()) {
                 Konf[14] += st14.nextToken() + ",";
                 Price += Double.parseDouble(st14.nextToken());
-                //---------
-                try {
-                    zapis = new FileWriter("konfiguracja.txt", true);
-                    zapis.write(Konf[14]);
-                    zapis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                zapis2 = new PrintWriter("cena-moc.txt");
-                zapis2.print(Price + "," + Power);
-                zapis2.close();
-                //---------
             }
+            //---------
+            try {
+                zapis = new FileWriter("konfiguracja.txt", true);
+                zapis.write(Konf[14]);
+                zapis.write(";");
+                zapis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            zapis2 = new PrintWriter("cena-moc.txt");
+            zapis2.print(Price + "," + Power);
+            zapis2.close();
+            //---------
         }
         System.out.println("Konfiguracja: "+Konf[0]+"|"+Konf[1]+"|"+Konf[2]+"|"+Konf[3]+"|"+Konf[4]+"|"+Konf[5]+"|"+Konf[6]+"|"+Konf[7]+"|"+Konf[8]+"|"+Konf[9]+"|"+Konf[10]+"|"+Konf[11]+"|"+Konf[12]+"|"+Konf[13]+"|"+Konf[14]);
         System.out.println("Cena: "+Price);
