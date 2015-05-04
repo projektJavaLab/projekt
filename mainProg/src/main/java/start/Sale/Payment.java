@@ -26,13 +26,14 @@ public class Payment {
             System.out.println("Podaj kwote: " + "\n");
             Scanner in = new Scanner(System.in);
             forsa = in.nextLine();
-            reszta = Float.parseFloat(cena_koncowa) - Float.parseFloat(forsa);
+            reszta = Float.parseFloat(forsa) - Float.parseFloat(cena_koncowa);
             if (reszta < 0)
                 System.out.println("Naucz sie liczyć debilu!" + "\n");
-            else if (reszta > 0)
+            else if (reszta > 0) {
                 System.out.println("Twoja reszta : " + reszta);
-            System.out.println("Dziekujemy za zakupy" + "\n");
-            break;
+                System.out.println("Dziekujemy za zakupy" + "\n");
+                break;
+            }
         }
         return 0;
     }
@@ -44,6 +45,7 @@ public class Payment {
             PIN[0] = in.nextLine();
             if (PIN[0].length() == 4 )
             {
+                System.out.println("Dziekujemy za zakupy" + "\n");
                 break;
             }
             else
@@ -67,6 +69,7 @@ public class Payment {
             in = new Scanner(System.in);
             przelew[2] = in.nextLine();
             if (przelew[2].length() == 26 ) {
+                System.out.println("Dziekujemy za zakupy" + "\n");
                 break;
             }
             else
@@ -78,8 +81,8 @@ public class Payment {
     public String wybierz_platnosc(String price, float fee)
     {
         float koszt = (Float.parseFloat(price) + fee);
-        System.out.println("Całowity kosz z przesyłka: " + koszt + "\n");
-        System.out.println("Wybierz sposób zapłaty: "+ "\n" + "1 - gotowka" + "\n" + "2- karta" + "\n" + "3 - przelew bankowy"+"\n");
+        System.out.println("\n"+"Całowity kosz z przesyłką: " + koszt + "\n");
+        System.out.println("Wybierz sposób zapłaty: "+ "\n" + "1 - gotówka" + "\n" + "2- karta" + "\n" + "3 - przelew bankowy"+"\n");
         Scanner in = new Scanner(System.in);
         this.type = in.nextInt();
         if (this.type == 1) gotowka(price);
