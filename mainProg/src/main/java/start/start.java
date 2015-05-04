@@ -84,35 +84,32 @@ public class start {
         Scanner in = new Scanner(System.in);
         String wybor = in.nextLine();
         wybor.toLowerCase();
-            switch (wybor) {
-                case "w": {
-                    // wznowienie konfiguracji
-                    Run run = new Run();
-                    Resume resume = new Resume();
-                    resume.odczytKonf(run);
-                    resume.odczytCenaMoc(run);
-                    run.Start();
-                    break;
-                }
-                case "k": {
-                    // konfiguracja
-                    Run run = new Run();
-                    run.Reset();
-                    run.Start();
-                    cena = run.Price;
-                    proc = run.Konf[0];
-                    break;
-                }
-                case "z": {
-                    // sprzedaz
-                    Main main = new Main();
-                    main.Start(cena, proc);
-                    break;
-                }
-                case "s": {
-                    // wyjscie
-                    return;
-                }
+            if (wybor.equals("w")) {
+                Run run = new Run();
+                Resume resume = new Resume();
+                resume.odczytKonf(run);
+                resume.odczytCenaMoc(run);
+                run.Start();
+                run = new Run();
+                run.Reset();
+                run.Start();
+                cena = run.Price;
+                proc = run.Konf[0];
+                Main main = new Main();
+                main.Start(cena, proc);
+            } else if (wybor.equals("k")) {
+                Run run = new Run();
+                run.Reset();
+                run.Start();
+                cena = run.Price;
+                proc = run.Konf[0];
+                Main main = new Main();
+                main.Start(cena, proc);
+            } else if (wybor.equals("z")) {
+                Main main = new Main();
+                main.Start(cena, proc);
+            } else if (wybor.equals("s")) {
+                return;
             }
         }
 

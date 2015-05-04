@@ -7,7 +7,7 @@ import start.configuration.Run;
  */
 public class Main {
     // tablica do przechowywania zamowienia
-    String[] Zamowienie=new String[4]; // 0 - cena, 1 - zniżka, 2 - sposob platnosci, 3- wysylka
+    public String[] Zamowienie=new String[4]; // 0 - cena, 1 - zniżka, 2 - sposob platnosci, 3- wysylka
     public void Start(double Price, String Proc) {
         if(Proc=="")
         {
