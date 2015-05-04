@@ -8,9 +8,14 @@ import java.util.Scanner;
 public class Delivery {
     private int year, month, deliveryNum;
     public int type;
-    private double fee;
+    public static double fee;
     private String deliveryCode;
     public static String []ADRES=new String [6];
+
+    public static double fee()
+    {
+        return fee;
+    }
 
     public Delivery(int year, int month, int deliveryNum) {
         this.year = year;

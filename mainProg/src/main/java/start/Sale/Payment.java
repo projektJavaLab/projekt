@@ -75,9 +75,11 @@ public class Payment {
         return 2;
     }
 
-    public String wybierz_platnosc(String price)
+    public String wybierz_platnosc(String price, float fee)
     {
-        System.out.println("Wybierz sposób zapłaty: "+ "\n" + "1 - gotowka" + "\n" + "2- karta" + "\n" + "3 - przelew bankowy");
+        float koszt = (Float.parseFloat(price) + fee);
+        System.out.println("Całowity kosz z przesyłka: " + koszt + "\n");
+        System.out.println("Wybierz sposób zapłaty: "+ "\n" + "1 - gotowka" + "\n" + "2- karta" + "\n" + "3 - przelew bankowy"+"\n");
         Scanner in = new Scanner(System.in);
         this.type = in.nextInt();
         if (this.type == 1) gotowka(price);

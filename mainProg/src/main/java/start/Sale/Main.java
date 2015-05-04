@@ -18,7 +18,8 @@ public class Main {
             Delivery delivery = new Delivery(2015, 4, 1);
             delivery.writeAdres(Delivery.ADRES);
             Payment payment = new Payment();
-            payment.wybierz_platnosc(Zamowienie[0]);
+            float fee = (float)Delivery.fee();
+            payment.wybierz_platnosc(Zamowienie[0], fee);
         }
     }
 }
