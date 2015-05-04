@@ -1,7 +1,5 @@
 package start.Sale;
 
-import start.configuration.Run;
-
 /**
  * Created by Michał on 2015-04-09.
  */
@@ -19,7 +17,8 @@ public class Main {
             System.out.println(Zamowienie[0]);
             Delivery delivery = new Delivery(2015, 4, 1);
             delivery.writeAdres(Delivery.ADRES);
-            //
+            Payment payment = new Payment();
+            payment.wybierz_platnosc(Zamowienie[0]);
         }
     }
 }

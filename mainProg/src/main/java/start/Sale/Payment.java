@@ -75,12 +75,12 @@ public class Payment {
         return 2;
     }
 
-    public String wybierz_platnosc()
+    public String wybierz_platnosc(String price)
     {
         System.out.println("Wybierz sposób zapłaty: "+ "\n" + "1 - gotowka" + "\n" + "2- karta" + "\n" + "3 - przelew bankowy");
         Scanner in = new Scanner(System.in);
         this.type = in.nextInt();
-        if (this.type == 1) gotowka(Zamowienie[0]);
+        if (this.type == 1) gotowka(String.valueOf(price));
         if (this.type == 2) karta();
         if (this.type == 3) przelew();
         return null;
