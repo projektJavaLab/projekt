@@ -10,25 +10,14 @@ import java.util.Scanner;
 public class Disc {
     public static double procent=1;
     public static double proc_znizki() {return procent;}
-
-    public Disc()
-    {
-        if(this.Greeter())
-        {
-            procent=this.znizka();
-        }
-    }
-
-    private boolean Greeter()
+    public void Greeter()
     {
         String tn;
         System.out.println("Czy masz może kod rabatowy(tak, nie): ");
         Scanner in = new Scanner(System.in);
         tn = in.nextLine();
         if(tn.equals("tak"))
-            return true;
-        else
-            return false;
+            procent=znizka();
     }
 
     private double znizka()
