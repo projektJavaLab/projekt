@@ -42,7 +42,7 @@ public class Disc {
             System.out.println("Masz wiecej kodow rabatowych?(tak, nie): ");
             in = new Scanner(System.in);
             kod = in.nextLine();
-            if(kod.equals("Nie"))
+            if(kod.equals("nie"))
                 i=false;
         }
         return znizka;

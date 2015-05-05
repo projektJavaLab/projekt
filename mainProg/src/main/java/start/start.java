@@ -45,6 +45,8 @@ public class start {
         output.readStringTab("chlodzenie.txt", danych.COOLING);
         // wczytywanie napędów
         output.readStringTab("napedy.txt", danych.DRIVE);
+        // wczytywanie zniżek
+        output.readStringTab("znizki.txt", danych.DISC);
         // testowanie
         //output.writeStringTab(danych.SCREEN);
         //System.out.println("");
