@@ -1,0 +1,2 @@
+1 zabawa 50
+2 truffle 75
