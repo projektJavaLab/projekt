@@ -1,2 +1,3 @@
 1 zabawa 0.5
 2 truffle 0.75
+3 AMD 0.95
