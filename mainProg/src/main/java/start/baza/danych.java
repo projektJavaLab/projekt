@@ -17,7 +17,7 @@ public class danych {
     public static String [][]COOLING=new String [14][7];
     public static String [][]NIC=new String [7][7];
     public static String [][]DRIVE=new String [4][8];
-    public static String [][]DISC=new String [3][3];
+    public static String [][]DISC=new String [8][3];
 }
 
 // monitory - SCREEN

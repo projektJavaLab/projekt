@@ -1,3 +1,9 @@
-1 zabawa 0.5
+1 haskell 0.8
 2 truffle 0.75
-3 AMD 0.95
+3 BieniaszHoliday 0.1
+4 hemoglobina 0.6
+5 hackerinoo 1.4
+6 over9000 90000000000000000000000000000000000000000000000000000000000000000.1
+7 GitMaven 0.97
+8 EclipseSucks 0.5
+
