@@ -77,7 +77,7 @@ public class Disc {
     {
         double temp;
         temp=(1-procent)*100;
-        System.out.println("Znizka wynosi: "+temp);
+        System.out.println("Znizka wynosi: "+temp+"%");
     }
 
 }
