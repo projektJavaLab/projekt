@@ -41,6 +41,11 @@ public class Motherboard extends Main {
         //output.writeStringTab(danych.MOTHERBOARD);
         int temp;
         temp = ID();
+        while(!(danych.MOTHERBOARD[temp][4].equals(processor)))
+        {
+            System.out.println("Musisz wybrac tylko z podanego zbioru !!!");
+            temp=ID();
+        }
         Sid += temp;
         Sid += ",";
         Sid += Price(temp);
