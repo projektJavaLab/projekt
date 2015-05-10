@@ -15,7 +15,7 @@ public class Motherboard extends Main {
     }
     public int ID() {
         int id=0;
-        System.out.println("Podaj ID części, w celu zakończenia podaj 0");
+        System.out.println("Podaj ID części");
         Scanner in = new Scanner(System.in);
         try
         {
@@ -26,7 +26,7 @@ public class Motherboard extends Main {
             System.out.println("Niepoprawne dane !!!");
             return ID();
         }
-        if(danych.MOTHERBOARD.length < id || id < 0)
+        if(danych.MOTHERBOARD.length < id || id < 1)
         {
             System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
             return ID();
