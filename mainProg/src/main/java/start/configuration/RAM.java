@@ -36,16 +36,23 @@ public class RAM extends Main{
         return id-1;
     }
     public String Do() {
+        int wybor=0;
         String Sid="";
         List();
         int temp;
         while (true){
             temp = ID();
+            while(temp==-1 && wybor==0)
+            {
+                System.out.println("Nie ominiesz tego, musisz wybrac przynajmniej jedną kostkę pamięci RAM!");
+                temp=ID();
+            }
             if(temp==-1) break;
             Sid += temp;
             Sid += ",";
             Sid += Price(temp);
             Sid += ";";
+            wybor++;
         }
         return Sid;
     }
