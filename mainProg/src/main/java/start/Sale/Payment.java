@@ -2,6 +2,8 @@ package start.Sale;
 
 import java.util.Scanner;
 
+import static java.lang.Math.round;
+
 /**
  * Created by Michał on 2015-04-09.
  * Edited by Krzysiek on 2015-05-04.
@@ -30,7 +32,7 @@ public class Payment {
             if (reszta < 0)
                 System.out.println("Naucz sie liczyć debilu!" + "\n");
             else if (reszta > 0) {
-                System.out.println("Twoja reszta : " + reszta);
+                System.out.println("Twoja reszta : " + Math.round(reszta*100)/100);
                 System.out.println("Dziekujemy za zakupy" + "\n");
                 break;
             }
@@ -81,7 +83,7 @@ public class Payment {
     public String wybierz_platnosc(String price, float fee)
     {
         float koszt = (Float.parseFloat(price) + fee);
-        System.out.println("\n"+"Całowity kosz z przesyłką: " + koszt + "\n");
+        System.out.println("\n"+"Całowity kosz z przesyłką: " + Math.round(koszt*100.0)/100.0 + "\n");
         System.out.println("Wybierz sposób zapłaty: "+ "\n" + "1 - gotówka" + "\n" + "2- karta" + "\n" + "3 - przelew bankowy"+"\n");
         Scanner in = new Scanner(System.in);
         this.type = in.nextInt();
