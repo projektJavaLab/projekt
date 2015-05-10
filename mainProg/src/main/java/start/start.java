@@ -78,7 +78,7 @@ public class start {
         //System.out.println("");
         //output.writeStringTab(danych.SOUNDCARD);
         //System.out.println("");
-
+//
         // start
         while(koniec)
         {
