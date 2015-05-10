@@ -35,16 +35,23 @@ public class HardDrive extends Main{
         return id-1;
     }
     public String Hdd() {
+        int wybor=0;
         String Sid="";
         List();
         int temp;
         while (true){
             temp = ID();
-            if(temp==-1) break;
+            while(temp==-1 && wybor==0)
+                {
+                    System.out.println("Nie ominiesz tego, musisz wybrac przynajmniej jeden dysk!");
+                    temp=ID();
+                }
+            if (temp==-1) break;
             Sid += temp;
             Sid += ",";
             Sid += Price(temp);
             Sid += ";";
+            wybor++;
         }
         return Sid;
     }
