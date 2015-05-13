@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class PowerSupply extends Main{
     public void List() {
         System.out.println("ID || Nazwa || Producent || MOC || STAN MAG. || CENA");
-        //output.writeStringTab(danych.POWERSUPPLY);
     }
     public double Price(int id) {
         String p = danych.POWERSUPPLY[id][5];
