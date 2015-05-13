@@ -18,7 +18,7 @@ public class Main {
             Disc disc = new Disc();
             disc.Greeter();
             Zamowienie[1]=String.valueOf(Disc.proc_znizki());
-            Zamowienie[0]=String.valueOf(Double.parseDouble(Zamowienie[0])*Double.parseDouble(Zamowienie[1]));
+            Zamowienie[0]=String.valueOf(Math.round((Double.parseDouble(Zamowienie[0]) * Double.parseDouble(Zamowienie[1]) * 100) / 100));
             Delivery delivery = new Delivery(2015, 4, 1);
             delivery.writeAdres(Delivery.ADRES);
             Payment payment = new Payment();
