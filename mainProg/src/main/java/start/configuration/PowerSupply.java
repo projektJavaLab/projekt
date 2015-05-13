@@ -41,7 +41,7 @@ public class PowerSupply extends Main{
         output.writeStringTabSelectPower(danych.POWERSUPPLY, 3, Pow);
         int temp;
         temp = ID();
-        while(!(danych.POWERSUPPLY[temp][3].equals(Pow)))
+        while(!(Double.parseDouble(danych.POWERSUPPLY[temp][3]) >= Pow))
         {
             System.out.println("Musisz wybrac tylko z podanego zbioru !!!");
             temp=ID();
