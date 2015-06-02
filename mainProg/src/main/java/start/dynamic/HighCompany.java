@@ -39,22 +39,49 @@ public class HighCompany {
     // tablica możliwych obudów
     public int [] CA = new int[]{1,2,3,4,5,6,7,8,9};
     // wybór akcesoriów
-    public static void Acc (double maxPrice) {
-        Price=0;
-        Konf[9]="";
-        Adds adds = new Adds();
-        System.out.println("Najpierw wybierz oprogramowanie, które chcesz mieć w komputerze. Pamietaj, że max kwota która pozostanie na resztę części musi być równa min. 3500");
-        String Sof = adds.Sof();
-        StringTokenizer st9 = new StringTokenizer(Sof, ",;");
-        while (st9.hasMoreTokens()) {
-            Konf[9] += st9.nextToken() + ",";
-            Price += Double.parseDouble(st9.nextToken());
-        }
-        if(maxPrice-Price<3500)
+    public int ID2() {
+        int id=0;
+        System.out.println("Podaj ID części, w celu zakończenia podaj 0");
+        Scanner in = new Scanner(System.in);
+        try
         {
-            System.out.println("Musisz wybrać inne bądź żadne oprogramowanie, ponieważ nie wystarczy na konfigurację komputera!");
-            Acc(maxPrice);
+            id=Integer.parseInt(in.next());
         }
+        catch (NumberFormatException n)
+        {
+            System.out.println("Niepoprawne dane !!!");
+            return ID2();
+        }
+        return id-1;
+    }
+    public String Sof(double maxPrice) {
+        String Sid="";
+        System.out.println("ID || NAZWA || CENA || STAN MAGAZYNOWY || RODZAJ");
+        output.writeStringTab(danych.SOFTWARE);
+        int temp;
+        double temp2=0;
+        while (true){
+            temp = ID2();
+            while(danych.SOFTWARE.length < temp+1 || temp+1 < 0)
+            {
+                System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+                temp=ID2();
+            }
+            if(temp==-1) break;
+            if(maxPrice-temp2>Double.parseDouble(danych.SOFTWARE[temp][2]))
+            {
+                Sid += temp;
+                Sid += ",";
+                Sid += Double.parseDouble(danych.SOFTWARE[temp][2]);
+                temp2 += Double.parseDouble(danych.SOFTWARE[temp][2]);
+                Sid += ";";
+            }
+            else
+            {
+                System.out.println("Wybrane akcesorium jest zbyt drogie");
+            }
+        }
+        return Sid;
     }
     public double Price(int id) {
         String p = danych.PROCESSOR[id][7];
@@ -241,8 +268,8 @@ public class HighCompany {
     // funkcja główna
     public void Start(double maxPrice) {
         // wybór oprogramowania
-        Acc(maxPrice);
         double Price2=maxPrice-Price;
+        System.out.println(Price);
         // max cena proc 30%
         String Pro = Proc(Price2);
         StringTokenizer st0 = new StringTokenizer(Pro, ",;");
@@ -312,6 +339,16 @@ public class HighCompany {
         while (st4.hasMoreTokens()) {
             Konf[4] += st4.nextToken() + ",";
             Price += Double.parseDouble(st4.nextToken());
+        }
+        double Price3=maxPrice-Price;
+        System.out.println("Pozostało Ci: "+Price3);
+        System.out.println("Wybierz teraz oprogramowanie");
+        // oprogramowanie, max cena reszta
+        String Sof = Sof(Price3);
+        StringTokenizer st9 = new StringTokenizer(Sof, ",;");
+        while (st9.hasMoreTokens()) {
+            Konf[9] += st9.nextToken() + ",";
+            Price += Double.parseDouble(st9.nextToken());
         }
         // wypisanie konfiguracji
         System.out.println("Konfiguracja: "+Konf[0]+"|"+Konf[1]+"|"+Konf[2]+"|"+Konf[3]+"|"+Konf[4]+"|"+Konf[5]+"|"+Konf[6]+"|"+Konf[7]+"|"+Konf[8]+"|"+Konf[9]+"|"+Konf[10]+"|"+Konf[11]+"|"+Konf[12]+"|"+Konf[13]+"|"+Konf[14]);
