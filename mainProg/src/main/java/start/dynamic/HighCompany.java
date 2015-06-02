@@ -153,6 +153,16 @@ public class HighCompany {
         Sid += ";";
         return Sid;
     }
+    public String Ni(double maxPrice) {
+        String Sid="";
+        int temp;
+        temp = ID(maxPrice, NiC, danych.NIC, 6, 0.1);
+        Sid += temp;
+        Sid += ",";
+        Sid += Double.parseDouble(danych.NIC[temp][6]);
+        Sid += ";";
+        return Sid;
+    }
     // funkcja główna
     public void Start(double maxPrice) {
         // wybór oprogramowania
@@ -191,6 +201,14 @@ public class HighCompany {
         while (st8.hasMoreTokens()) {
             Konf[8] += st8.nextToken() + ",";
             Price += Double.parseDouble(st8.nextToken());
+        }
+        // karta sieciowa
+        String Ni = Ni(Price2);
+        StringTokenizer st11 = new StringTokenizer(Ni, ",;");
+        while (st11.hasMoreTokens()) {
+            Konf[11] += st11.nextToken() + ",";
+            Price += Double.parseDouble(st11.nextToken());
+            Power += 3;
         }
         // max cena HDD 10%
 
