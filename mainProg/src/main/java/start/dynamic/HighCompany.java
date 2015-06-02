@@ -118,6 +118,32 @@ public class HighCompany {
         }
         return Sid;
     }
+    public double PriceG(int id) {
+        String p = danych.GRAPHICCARD[id][7];
+        return Double.parseDouble(p);
+    }
+    public int PowerG(int id) {
+        String p = danych.GRAPHICCARD[id][5];
+        return Integer.parseInt(p);
+    }
+    public String Gcard(double maxPrice) {
+        String Sid="";
+        int temp;
+        double temp2=0;
+        boolean ok=true;
+        while (ok){
+            temp = ID(maxPrice, GraphCard, danych.GRAPHICCARD, 7, 0.1);
+            Sid += temp;
+            Sid += ",";
+            Sid += PriceG(temp);
+            temp2 += PriceG(temp);
+            Sid += ",";
+            Sid += PowerG(temp);
+            Sid += ";";
+            if(maxPrice*0.1-temp2<270) ok=false;
+        }
+        return Sid;
+    }
     // funkcja główna
     public void Start(double maxPrice) {
         // wybór oprogramowania
@@ -141,12 +167,24 @@ public class HighCompany {
             Power += 5;
         }
         // max cena grafika 10%
+        String Gc = Gcard(Price2);
+        StringTokenizer st3 = new StringTokenizer(Gc, ",;");
+        while (st3.hasMoreTokens()) {
+            Konf[3] += st3.nextToken() + ",";
+            Price += Double.parseDouble(st3.nextToken());
+            Power += Integer.parseInt(st3.nextToken());
+        }
+        System.out.println(Konf[3]);
         // max cena płyta główna 10%
 
         // max cena system 10%
+
         // max cena HDD 10%
+
         // max cena SSD 10%
+
         // max cena zasilacz 10%
+
     }
 
 }
