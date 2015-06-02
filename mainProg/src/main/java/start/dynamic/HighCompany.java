@@ -30,6 +30,8 @@ public class HighCompany {
     public int [] NiC = new int[]{1,2,3,4};
     // tablica możliwych systemów operacyjnych
     public int [] OS = new int[]{1,2,3,4,5,6,7,8};
+    // tablica możliwych płyt głównych
+    public int [] MB = new int[]{1,2,3,4,5,6,7,8,9,10};
     // wybór akcesoriów
     public static void Acc (double maxPrice) {
         Price=0;
@@ -163,6 +165,20 @@ public class HighCompany {
         Sid += ";";
         return Sid;
     }
+    public String Mb(String processor, double maxPrice){
+        String Sid="";
+        int temp;
+        temp = ID(maxPrice, MB, danych.MOTHERBOARD, 7, 0.1);
+        while(!(danych.MOTHERBOARD[temp][4].equals(processor)))
+        {
+            temp=ID(maxPrice, MB, danych.MOTHERBOARD, 7, 0.1);
+        }
+        Sid += temp;
+        Sid += ",";
+        Sid += Double.parseDouble(danych.MOTHERBOARD[temp][7]);
+        Sid += ";";
+        return Sid;
+    }
     // funkcja główna
     public void Start(double maxPrice) {
         // wybór oprogramowania
@@ -194,7 +210,13 @@ public class HighCompany {
             Power += Integer.parseInt(st3.nextToken());
         }
         // max cena płyta główna 10%
-
+        String Moth = Mb(Socket, Price2);
+        StringTokenizer st1 = new StringTokenizer(Moth, ",;");
+        while (st1.hasMoreTokens()) {
+            Konf[1] += st1.nextToken() + ",";
+            Price += Double.parseDouble(st1.nextToken());
+            Power += 50;
+        }
         // max cena system 10%
         String Os = Os(Price2);
         StringTokenizer st8 = new StringTokenizer(Os, ",;");
