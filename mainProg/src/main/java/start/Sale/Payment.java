@@ -32,7 +32,7 @@ public class Payment {
             if (reszta < 0)
                 System.out.println("Naucz sie liczyć debilu!" + "\n");
             else if (reszta > 0) {
-                System.out.println("Twoja reszta : " + Math.round(reszta*100)/100);
+                System.out.println("Twoja reszta : " + (float)(Math.round(reszta*100)/100));
                 System.out.println("Dziekujemy za zakupy" + "\n");
                 break;
             }
@@ -82,14 +82,32 @@ public class Payment {
 
     public String wybierz_platnosc(String price, float fee)
     {
-        float koszt = (Float.parseFloat(price) + fee);
-        System.out.println("\n"+"Całowity kosz z przesyłką: " + Math.round(koszt*100.0)/100.0 + "\n");
-        System.out.println("Wybierz sposób zapłaty: "+ "\n" + "1 - gotówka" + "\n" + "2- karta" + "\n" + "3 - przelew bankowy"+"\n");
-        Scanner in = new Scanner(System.in);
-        this.type = in.nextInt();
-        if (this.type == 1) gotowka(price);
-        if (this.type == 2) karta();
-        if (this.type == 3) przelew();
+        while(true) {
+            float koszt = (Float.parseFloat(price) + fee);
+            System.out.println("\n" + "Całowity kosz z przesyłką: " + Math.round(koszt * 100.0) / 100.0 + "\n");
+            System.out.println("Wybierz sposób zapłaty: " + "\n" + "1 - gotówka" + "\n" + "2- karta" + "\n" + "3 - przelew bankowy" + "\n");
+            Scanner in = new Scanner(System.in);
+            this.type = in.nextInt();
+            if (this.type == 1)
+            {
+                gotowka(Float.toString(koszt));
+                break;
+            }
+            if (this.type == 2)
+            {
+                karta();
+                break;
+            }
+            if (this.type == 3)
+            {
+                przelew();
+                break;
+            }
+            else
+            {
+                System.out.println("Błedny wybór!");
+            }
+            }
         return null;
     }
 }
