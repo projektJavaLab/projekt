@@ -60,7 +60,7 @@ public class HighCompany {
     public String Socket(int id){
         return danych.PROCESSOR[id][5];
     }
-    public int ID(double maxPrice, int []tab, String [][]tab2) {
+    public int ID(double maxPrice, int []tab, String [][]tab2, int C, double P) {
         int id=0;
         // wybranie odpowiedniego ID
         boolean ok=true;
@@ -68,8 +68,8 @@ public class HighCompany {
         int a;
         while(ok)
         {
-            a=r.nextInt(20);
-            if(Double.parseDouble(tab2[a][7])<maxPrice*0.3)
+            a=r.nextInt(tab2.length);
+            if(Double.parseDouble(tab2[a][C])<maxPrice*P)
             {
                 for(int i=0; i<tab.length; i++)
                 {
@@ -87,7 +87,7 @@ public class HighCompany {
     public String Proc(double maxPrice){
         String Sid="";
         int temp;
-        temp = ID(maxPrice, Proc, danych.PROCESSOR);
+        temp = ID(maxPrice, Proc, danych.PROCESSOR, 7, 0.3);
         Sid += temp;
         Sid += ",";
         Sid += Price(temp);
@@ -96,6 +96,26 @@ public class HighCompany {
         Sid += ",";
         Sid += Power(temp);
         Sid += ";";
+        return Sid;
+    }
+    public double PriceRam(int id) {
+        String p = danych.RAM[id][6];
+        return Double.parseDouble(p);
+    }
+    public String Ram(double maxPrice) {
+        String Sid="";
+        double temp2=0;
+        int temp;
+        boolean ok=true;
+        while (ok){
+            temp = ID(maxPrice, Ram, danych.RAM, 6, 0.1);
+            Sid += temp;
+            Sid += ",";
+            Sid += PriceRam(temp);
+            temp2 += PriceRam(temp);
+            Sid += ";";
+            if(maxPrice*0.1-temp2<300) ok=false;
+        }
         return Sid;
     }
     // funkcja główna
@@ -112,10 +132,17 @@ public class HighCompany {
             Socket += st0.nextToken();
             Power += Integer.parseInt(st0.nextToken());
         }
-        System.out.println(Konf[0]);
         // max cena ram 10%
+        String Ram = Ram(Price2);
+        StringTokenizer st2 = new StringTokenizer(Ram, ",;");
+        while (st2.hasMoreTokens()) {
+            Konf[2] += st2.nextToken() + ",";
+            Price += Double.parseDouble(st2.nextToken());
+            Power += 5;
+        }
         // max cena grafika 10%
-        // max cena reszta 10%
+        // max cena płyta główna 10%
+
         // max cena system 10%
         // max cena HDD 10%
         // max cena SSD 10%
