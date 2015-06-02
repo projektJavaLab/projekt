@@ -11,9 +11,6 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-/**
- * Created by Michał on 2015-05-30.
- */
 public class HighCompany {
     // cena
     public static double Price = 0;
@@ -31,6 +28,8 @@ public class HighCompany {
     public int [] GraphCard = new int[]{1,2,3,6,7};
     // tablica możliwych kart sieciowych
     public int [] NiC = new int[]{1,2,3,4};
+    // tablica możliwych systemów operacyjnych
+    public int [] OS = new int[]{1,2,3,4,5,6,7,8};
     // wybór akcesoriów
     public static void Acc (double maxPrice) {
         Price=0;
@@ -144,6 +143,16 @@ public class HighCompany {
         }
         return Sid;
     }
+    public String Os(double maxPrice) {
+        String Sid="";
+        int temp;
+        temp = ID(maxPrice, OS, danych.OS, 6, 0.1);
+        Sid += temp;
+        Sid += ",";
+        Sid += Double.parseDouble(danych.OS[temp][6]);
+        Sid += ";";
+        return Sid;
+    }
     // funkcja główna
     public void Start(double maxPrice) {
         // wybór oprogramowania
@@ -174,11 +183,15 @@ public class HighCompany {
             Price += Double.parseDouble(st3.nextToken());
             Power += Integer.parseInt(st3.nextToken());
         }
-        System.out.println(Konf[3]);
         // max cena płyta główna 10%
 
         // max cena system 10%
-
+        String Os = Os(Price2);
+        StringTokenizer st8 = new StringTokenizer(Os, ",;");
+        while (st8.hasMoreTokens()) {
+            Konf[8] += st8.nextToken() + ",";
+            Price += Double.parseDouble(st8.nextToken());
+        }
         // max cena HDD 10%
 
         // max cena SSD 10%
