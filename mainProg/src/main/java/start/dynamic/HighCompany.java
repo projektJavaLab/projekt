@@ -266,7 +266,7 @@ public class HighCompany {
         return Sid;
     }
     // funkcja główna
-    public void Start(double maxPrice) {
+    public String[] Start(double maxPrice) {
         // wybór oprogramowania
         double Price2=maxPrice-Price;
         System.out.println(Price);
@@ -354,6 +354,12 @@ public class HighCompany {
         System.out.println("Konfiguracja: "+Konf[0]+"|"+Konf[1]+"|"+Konf[2]+"|"+Konf[3]+"|"+Konf[4]+"|"+Konf[5]+"|"+Konf[6]+"|"+Konf[7]+"|"+Konf[8]+"|"+Konf[9]+"|"+Konf[10]+"|"+Konf[11]+"|"+Konf[12]+"|"+Konf[13]+"|"+Konf[14]);
         System.out.println("Cena: "+Price);
         System.out.println("Moc: "+Power);
+        String [] RET = new String[17];
+        RET[15] = String.valueOf(Price);
+        RET[16] = String.valueOf(Power);
+        for(int i=0; i<15; i++)
+            RET[i]=Konf[i];
+        return RET;
     }
 
 }

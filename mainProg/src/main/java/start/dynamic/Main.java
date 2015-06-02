@@ -4,6 +4,7 @@ import start.baza.danych;
 import start.output;
 
 import java.io.FileNotFoundException;
+import java.util.StringTokenizer;
 
 /**
  * Created by Michał on 2015-05-23.
@@ -11,6 +12,8 @@ import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         //
+        // 0-procesor, 1-płyta główna, 2-ram, 3-karta graficzna, 4-obudowa, 5-dysk, 6-akcesoria, 7-monitory, 8-systemy, 9-oprogramowanie, 10-chłodzenie, 11-karty sieciowe, 12-karty dźwiękowe, 13-napęd, 14-zasilacz, 15-cena, 16-moc
+        String[] Konf= new String[]{"", "", "", "", "", "", "", "", "", "", "" ,"" ,"" ,"", "", "", "" };
         // wczytanie do bazy z plików listy części
         // wczytywanie obudów
         output.readStringTab("obudowy.txt", danych.CASE);
@@ -46,6 +49,9 @@ public class Main {
         output.readStringTab("znizki.txt", danych.DISC);
         //
         HighCompany hc = new HighCompany();
-        hc.Start(4000);
+        Konf = hc.Start(4000);
+        System.out.println("Konfiguracja: "+Konf[0]+"|"+Konf[1]+"|"+Konf[2]+"|"+Konf[3]+"|"+Konf[4]+"|"+Konf[5]+"|"+Konf[6]+"|"+Konf[7]+"|"+Konf[8]+"|"+Konf[9]+"|"+Konf[10]+"|"+Konf[11]+"|"+Konf[12]+"|"+Konf[13]+"|"+Konf[14]);
+        System.out.println("Cena: "+Konf[15]);
+        System.out.println("Moc: "+Konf[16]);
     }
 }
