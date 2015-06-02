@@ -36,6 +36,8 @@ public class HighCompany {
     public int [] HD = new int[]{6,7,8,9,10};
     // tablica możliwych zasilaczy
     public int [] PS = new int[]{1,2,3,4,5,6,7,8,9,10};
+    // tablica możliwych obudów
+    public int [] CA = new int[]{1,2,3,4,5,6,7,8,9};
     // wybór akcesoriów
     public static void Acc (double maxPrice) {
         Price=0;
@@ -211,14 +213,28 @@ public class HighCompany {
         String Sid="";
         Pow += 100; //rezerwa mocy
         int temp;
-        temp = ID(maxPrice, PS, danych.POWERSUPPLY, 5, 0.15);
+        temp = ID(maxPrice, PS, danych.POWERSUPPLY, 5, 0.10);
         while(!(Double.parseDouble(danych.POWERSUPPLY[temp][3]) >= Pow))
         {
-            temp=ID(maxPrice, PS, danych.POWERSUPPLY, 5, 0.15);
+            temp=ID(maxPrice, PS, danych.POWERSUPPLY, 5, 0.10);
         }
         Sid += temp;
         Sid += ",";
         Sid += PricePS(temp);
+        Sid += ";";
+        return Sid;
+    }
+    public double PriceC(int id) {
+        String p = danych.CASE[id][8];
+        return Double.parseDouble(p);
+    }
+    public String Ob(double maxPrice) {
+        String Sid="";
+        int temp;
+        temp = ID(maxPrice, CA, danych.CASE, 8, 0.05);
+        Sid += temp;
+        Sid += ",";
+        Sid += PriceC(temp);
         Sid += ";";
         return Sid;
     }
@@ -283,12 +299,19 @@ public class HighCompany {
             Price += Double.parseDouble(st5.nextToken());
             Power += 10;
         }
-        // max cena zasilacz 15%
+        // max cena zasilacz 10%
         String Psu = Psupp(Power, Price2);
         StringTokenizer st14 = new StringTokenizer(Psu, ",;");
         while (st14.hasMoreTokens()) {
             Konf[14] += st14.nextToken() + ",";
             Price += Double.parseDouble(st14.nextToken());
+        }
+        // max cena obudowy 5%
+        String Ca = Ob(Price2);
+        StringTokenizer st4 = new StringTokenizer(Ca, ",;");
+        while (st4.hasMoreTokens()) {
+            Konf[4] += st4.nextToken() + ",";
+            Price += Double.parseDouble(st4.nextToken());
         }
         // wypisanie konfiguracji
         System.out.println("Konfiguracja: "+Konf[0]+"|"+Konf[1]+"|"+Konf[2]+"|"+Konf[3]+"|"+Konf[4]+"|"+Konf[5]+"|"+Konf[6]+"|"+Konf[7]+"|"+Konf[8]+"|"+Konf[9]+"|"+Konf[10]+"|"+Konf[11]+"|"+Konf[12]+"|"+Konf[13]+"|"+Konf[14]);
