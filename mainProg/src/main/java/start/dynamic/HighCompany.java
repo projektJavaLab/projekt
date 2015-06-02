@@ -32,6 +32,8 @@ public class HighCompany {
     public int [] OS = new int[]{1,2,3,4,5,6,7,8};
     // tablica możliwych płyt głównych
     public int [] MB = new int[]{1,2,3,4,5,6,7,8,9,10};
+    // tablica możluwych dysków
+    public int [] HD = new int[]{6,7,8,9,10};
     // wybór akcesoriów
     public static void Acc (double maxPrice) {
         Price=0;
@@ -179,6 +181,26 @@ public class HighCompany {
         Sid += ";";
         return Sid;
     }
+    public double PriceHD(int id) {
+        String p = danych.HARDDRIVE[id][5];
+        return Double.parseDouble(p);
+    }
+    public String Hdd(double maxPrice) {
+        String Sid="";
+        int temp;
+        double temp2=0;
+        boolean ok=true;
+        while (ok){
+            temp = ID(maxPrice, HD, danych.HARDDRIVE, 5, 0.15);
+            Sid += temp;
+            Sid += ",";
+            Sid += PriceHD(temp);
+            temp2 += PriceHD(temp);
+            Sid += ";";
+            if(maxPrice*0.15-temp2<280) ok=false;
+        }
+        return Sid;
+    }
     // funkcja główna
     public void Start(double maxPrice) {
         // wybór oprogramowania
@@ -232,12 +254,17 @@ public class HighCompany {
             Price += Double.parseDouble(st11.nextToken());
             Power += 3;
         }
-        // max cena HDD 10%
-
-        // max cena SSD 10%
-
+        // max cena SSD 15%
+        String Hdd = Hdd(Price2);
+        StringTokenizer st5 = new StringTokenizer(Hdd, ",;");
+        while (st5.hasMoreTokens()) {
+            Konf[5] += st5.nextToken() + ",";
+            Price += Double.parseDouble(st5.nextToken());
+            Power += 10;
+        }
         // max cena zasilacz 10%
 
+        // zostało 5%!
     }
 
 }
