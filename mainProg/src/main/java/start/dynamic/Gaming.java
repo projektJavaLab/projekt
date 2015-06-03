@@ -1,17 +1,14 @@
 package start.dynamic;
 
-import start.configuration.Adds;
 import start.baza.danych;
-import start.configuration.Processor;
 import start.output;
 
-import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class HighCompany {
+public class Gaming {
     // cena
     public static double Price = 0;
     // moc
@@ -21,23 +18,26 @@ public class HighCompany {
     // 0-procesor, 1-płyta główna, 2-ram, 3-karta graficzna, 4-obudowa, 5-dysk, 6-akcesoria, 7-monitory, 8-systemy, 9-oprogramowanie, 10-chłodzenie, 11-karty sieciowe, 12-karty dźwiękowe, 13-napęd, 14-zasilacz
     public static String[] Konf= new String[]{"", "", "", "", "", "", "", "", "", "", "" ,"" ,"" ,"", "" };
     // tablic możliwych procesorów
-    public int [] Proc = new int[]{3,4,12,13,14,15,16,17,18,19,20};
+    public int [] Proc = new int[]{3,4,12,13,14,15,16,17};
     // tablica możliwych RAM
     public int [] Ram = new int[]{1,2,3,4,5};
     // tablica możliwych kart graficznych
-    public int [] GraphCard = new int[]{1,2,3,6,7};
+    public int [] GraphCard = new int[]{3,4,5,8,9,10};
     // tablica możliwych kart sieciowych
-    public int [] NiC = new int[]{1,2,3,4};
+    public int [] NiC = new int[]{1,2,3,4,5,6,7};
     // tablica możliwych systemów operacyjnych
     public int [] OS = new int[]{1,2,3,4,5,6,7,8};
     // tablica możliwych płyt głównych
     public int [] MB = new int[]{1,2,3,4,5,6,7,8,9,10};
     // tablica możliwych dysków
-    public int [] HD = new int[]{6,7,8,9,10};
+    public int [] HD = new int[]{1,2,3,4,5,6,7,8,9,10};
     // tablica możliwych zasilaczy
     public int [] PS = new int[]{1,2,3,4,5,6,7,8,9,10};
     // tablica możliwych obudów
     public int [] CA = new int[]{1,2,3,4,5,6,7,8,9};
+    // tablica możliwych chłodzeń
+    public int [] Cool = new int[]{8,9,10,11,12,13,14};
+
     // wybór akcesoriów
     public int ID2() {
         int id=0;
@@ -121,7 +121,7 @@ public class HighCompany {
     public String Proc(double maxPrice){
         String Sid="";
         int temp;
-        temp = ID(maxPrice, Proc, danych.PROCESSOR, 7, 0.3);
+        temp = ID(maxPrice, Proc, danych.PROCESSOR, 7, 0.25);
         Sid += temp;
         Sid += ",";
         Sid += Price(temp);
@@ -142,7 +142,7 @@ public class HighCompany {
         int temp;
         boolean ok=true;
         while (ok){
-            temp = ID(maxPrice, Ram, danych.RAM, 6, 0.1);
+            temp = ID(maxPrice, Ram, danych.RAM, 6, 0.10);
             Sid += temp;
             Sid += ",";
             Sid += PriceRam(temp);
@@ -166,7 +166,7 @@ public class HighCompany {
         double temp2=0;
         boolean ok=true;
         while (ok){
-            temp = ID(maxPrice, GraphCard, danych.GRAPHICCARD, 7, 0.1);
+            temp = ID(maxPrice, GraphCard, danych.GRAPHICCARD, 7, 0.25);
             Sid += temp;
             Sid += ",";
             Sid += PriceG(temp);
@@ -181,7 +181,7 @@ public class HighCompany {
     public String Os(double maxPrice) {
         String Sid="";
         int temp;
-        temp = ID(maxPrice, OS, danych.OS, 6, 0.1);
+        temp = ID(maxPrice, OS, danych.OS, 6, 0.03);
         Sid += temp;
         Sid += ",";
         Sid += Double.parseDouble(danych.OS[temp][6]);
@@ -191,7 +191,7 @@ public class HighCompany {
     public String Ni(double maxPrice) {
         String Sid="";
         int temp;
-        temp = ID(maxPrice, NiC, danych.NIC, 6, 0.1);
+        temp = ID(maxPrice, NiC, danych.NIC, 6, 0.02);
         Sid += temp;
         Sid += ",";
         Sid += Double.parseDouble(danych.NIC[temp][6]);
@@ -222,7 +222,7 @@ public class HighCompany {
         double temp2=0;
         boolean ok=true;
         while (ok){
-            temp = ID(maxPrice, HD, danych.HARDDRIVE, 5, 0.15);
+            temp = ID(maxPrice, HD, danych.HARDDRIVE, 5, 0.05);
             Sid += temp;
             Sid += ",";
             Sid += PriceHD(temp);
@@ -238,7 +238,7 @@ public class HighCompany {
     }
     public String Psupp(double Pow, double maxPrice) {
         String Sid="";
-        Pow += 100; //rezerwa mocy
+        Pow += 200; //rezerwa mocy
         int temp;
         temp = ID(maxPrice, PS, danych.POWERSUPPLY, 5, 0.10);
         while(!(Double.parseDouble(danych.POWERSUPPLY[temp][3]) >= Pow))
@@ -265,12 +265,35 @@ public class HighCompany {
         Sid += ";";
         return Sid;
     }
+
+
+    public double PriceCool(int id) {
+        String p = danych.COOLING[id][6];
+        return Double.parseDouble(p);
+    }
+    public String Co(double maxPrice) {
+        String Sid = "";
+        double temp2 = 0;
+        int temp;
+        boolean ok = true;
+        while (ok) {
+            temp = ID(maxPrice, Cool, danych.COOLING, 6, 0.05);
+            Sid += temp;
+            Sid += ",";
+            Sid += PriceCool(temp);
+            temp2 += PriceCool(temp);
+            Sid += ";";
+            if (maxPrice * 0.05 - temp2 < 300) ok = false;
+        }
+        return Sid;
+    }
+
     // funkcja główna
     public String[] Start(double maxPrice) {
         // wybór oprogramowania
         double Price2=maxPrice-Price;
         System.out.println(Price);
-        // max cena proc 30%
+        // max cena proc 25%
         String Pro = Proc(Price2);
         StringTokenizer st0 = new StringTokenizer(Pro, ",;");
         while (st0.hasMoreTokens()) {
@@ -287,7 +310,7 @@ public class HighCompany {
             Price += Double.parseDouble(st2.nextToken());
             Power += 5;
         }
-        // max cena grafika 10%
+        // max cena grafika 25%
         String Gc = Gcard(Price2);
         StringTokenizer st3 = new StringTokenizer(Gc, ",;");
         while (st3.hasMoreTokens()) {
@@ -303,14 +326,14 @@ public class HighCompany {
             Price += Double.parseDouble(st1.nextToken());
             Power += 50;
         }
-        // max cena system 10%
+        // max cena system 3%
         String Os = Os(Price2);
         StringTokenizer st8 = new StringTokenizer(Os, ",;");
         while (st8.hasMoreTokens()) {
             Konf[8] += st8.nextToken() + ",";
             Price += Double.parseDouble(st8.nextToken());
         }
-        // karta sieciowa
+        // karta sieciowa 2%
         String Ni = Ni(Price2);
         StringTokenizer st11 = new StringTokenizer(Ni, ",;");
         while (st11.hasMoreTokens()) {
@@ -318,7 +341,7 @@ public class HighCompany {
             Price += Double.parseDouble(st11.nextToken());
             Power += 3;
         }
-        // max cena SSD 15%
+        // max cena dysku 5%
         String Hdd = Hdd(Price2);
         StringTokenizer st5 = new StringTokenizer(Hdd, ",;");
         while (st5.hasMoreTokens()) {
@@ -340,6 +363,17 @@ public class HighCompany {
             Konf[4] += st4.nextToken() + ",";
             Price += Double.parseDouble(st4.nextToken());
         }
+
+        // max cena chlodzenia 5%
+        String Cool = Co(Price2);
+        StringTokenizer st10 = new StringTokenizer(Cool, ",;");
+        while (st10.hasMoreTokens()) {
+            Konf[10] += st10.nextToken() + ",";
+            Price += Double.parseDouble(st10.nextToken());
+        }
+
+
+
         double Price3=maxPrice-Price;
         System.out.println("Pozostało Ci: "+Price3);
         System.out.println("Wybierz teraz oprogramowanie\n");
