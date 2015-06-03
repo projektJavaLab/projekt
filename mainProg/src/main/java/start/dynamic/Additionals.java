@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class Additionals {
+public class Additionals extends Main{
     // cena
     public static double Price = 0;
     // moc
@@ -33,6 +33,31 @@ public class Additionals {
             System.out.println("Niepoprawne dane !!!");
             return ID2();
         }
+        return id-1;
+    }
+
+    public int ID(double maxPrice, int []tab, String [][]tab2, int C, double P) {
+        int id=0;
+        // wybranie odpowiedniego ID
+        boolean ok=true;
+        Random r = new Random();
+        int a;
+        while(ok)
+        {
+            a=r.nextInt(tab2.length);
+            if(Double.parseDouble(tab2[a][C])<maxPrice*P)
+            {
+                for(int i=0; i<tab.length; i++)
+                {
+                    if(Integer.parseInt(tab2[a][0])==tab[i])
+                    {
+                        ok=false;
+                        id=Integer.parseInt(tab2[a][0]);
+                    }
+                }
+            }
+        }
+        //
         return id-1;
     }
 
