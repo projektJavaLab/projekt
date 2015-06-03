@@ -63,6 +63,7 @@ public class Main {
 
         //aktualizacja konfiguracji o wybrane dodatki
         Konf[6]=KonfAdds[6];
+        Konf[7]=KonfAdds[7];
         Konf[12]=KonfAdds[12];
         Konf[13]=KonfAdds[13];
         Konf[15]= String.valueOf(parseDouble(Konf[15])+parseDouble(KonfAdds[15]));
