@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class Additionals {
+public class Additionals extends Main{
     // cena
     public static double Price = 0;
     // moc
@@ -35,7 +35,64 @@ public class Additionals {
         }
         return id-1;
     }
-    
+
+    public int ID(double maxPrice, int []tab, String [][]tab2, int C, double P) {
+        int id=0;
+        // wybranie odpowiedniego ID
+        boolean ok=true;
+        Random r = new Random();
+        int a;
+        while(ok)
+        {
+            a=r.nextInt(tab2.length);
+            if(Double.parseDouble(tab2[a][C])<maxPrice*P)
+            {
+                for(int i=0; i<tab.length; i++)
+                {
+                    if(Integer.parseInt(tab2[a][0])==tab[i])
+                    {
+                        ok=false;
+                        id=Integer.parseInt(tab2[a][0]);
+                    }
+                }
+            }
+        }
+        //
+        return id-1;
+    }
+
+
+
+    // MONITOR
+    public String Scr(double maxPrice) {
+        String Sid="";
+        System.out.println("ID || NAZWA || CENA || STAN MAGAZYNOWY || RODZAJ");
+        output.writeStringTab(danych.SCREEN);
+        int temp;
+        double temp2=0;
+        while (true){
+            temp = ID2();
+            while(danych.SCREEN.length < temp+1 || temp+1 < 0)
+            {
+                System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+                temp=ID2();
+            }
+            if(temp==-1) break;
+            if(maxPrice-temp2>Double.parseDouble(danych.SCREEN[temp][2]))
+            {
+                Sid += temp;
+                Sid += ",";
+                Sid += Double.parseDouble(danych.SCREEN[temp][2]);
+                temp2 += Double.parseDouble(danych.SCREEN[temp][2]);
+                Sid += ";";
+            }
+            else
+            {
+                System.out.println("Wybrane akcesorium jest zbyt drogie");
+            }
+        }
+        return Sid;
+    }
 
 
 
@@ -148,6 +205,21 @@ public class Additionals {
 
 
         double Price3=maxPrice;
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Pozostało Ci: "+Price3);
+        System.out.println("Wybierz teraz monitor\n");
+
+        String Scr = Scr(Price3);
+        StringTokenizer st7 = new StringTokenizer(Scr, ",;");
+        while (st7.hasMoreTokens()) {
+            Konf[7] += st7.nextToken() + ",";
+            Price += Double.parseDouble(st7.nextToken());
+        }
+        Price3-=Price;
+
+
         System.out.println();
         System.out.println();
         System.out.println("Pozostało Ci: "+Price3);

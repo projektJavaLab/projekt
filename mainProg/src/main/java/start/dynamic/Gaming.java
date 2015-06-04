@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class Gaming {
+public class Gaming extends Main {
     // cena
     public static double Price = 0;
     // moc
@@ -54,6 +54,36 @@ public class Gaming {
         }
         return id-1;
     }
+
+    public int ID(double maxPrice, int []tab, String [][]tab2, int C, double P) {
+        int id=0;
+        // wybranie odpowiedniego ID
+        boolean ok=true;
+        Random r = new Random();
+        int a;
+        while(ok)
+        {
+            a=r.nextInt(tab2.length);
+            if(Double.parseDouble(tab2[a][C])<maxPrice*P)
+            {
+                for(int i=0; i<tab.length; i++)
+                {
+                    if(Integer.parseInt(tab2[a][0])==tab[i])
+                    {
+                        ok=false;
+                        id=Integer.parseInt(tab2[a][0]);
+                    }
+                }
+            }
+        }
+        //
+        return id-1;
+    }
+
+
+
+
+
     public String Sof(double maxPrice) {
         String Sid="";
         System.out.println("ID || NAZWA || CENA || STAN MAGAZYNOWY || RODZAJ");
@@ -83,6 +113,10 @@ public class Gaming {
         }
         return Sid;
     }
+
+
+
+
     public double Price(int id) {
         String p = danych.PROCESSOR[id][7];
         return Double.parseDouble(p);
@@ -94,30 +128,7 @@ public class Gaming {
     public String Socket(int id){
         return danych.PROCESSOR[id][5];
     }
-    public int ID(double maxPrice, int []tab, String [][]tab2, int C, double P) {
-        int id=0;
-        // wybranie odpowiedniego ID
-        boolean ok=true;
-        Random r = new Random();
-        int a;
-        while(ok)
-        {
-            a=r.nextInt(tab2.length);
-            if(Double.parseDouble(tab2[a][C])<maxPrice*P)
-            {
-                for(int i=0; i<tab.length; i++)
-                {
-                    if(Integer.parseInt(tab2[a][0])==tab[i])
-                    {
-                        ok=false;
-                        id=Integer.parseInt(tab2[a][0]);
-                    }
-                }
-            }
-        }
-        //
-        return id-1;
-    }
+
     public String Proc(double maxPrice){
         String Sid="";
         int temp;
@@ -292,7 +303,7 @@ public class Gaming {
     public String[] Start(double maxPrice) {
         // wybór oprogramowania
         double Price2=maxPrice-Price;
-        System.out.println(Price);
+        //System.out.println(Price);
         // max cena proc 25%
         String Pro = Proc(Price2);
         StringTokenizer st0 = new StringTokenizer(Pro, ",;");
