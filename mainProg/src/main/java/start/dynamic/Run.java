@@ -55,11 +55,14 @@ public class Run {
         //HighCompany hc = new HighCompany();
         //Konf = hc.Start(4000);
 
-        Gaming game = new Gaming();
-        Konf = game.Start(7000);
+        //Gaming game = new Gaming();
+        //Konf = game.Start(7000);
+
+        Home ho = new Home();
+        Konf = ho.Start(2500);
 
         Additionals adds = new Additionals();
-        KonfAdds = adds.Start(7000-parseDouble(Konf[15]));
+        KonfAdds = adds.Start(2000-parseDouble(Konf[15]));
 
         //aktualizacja konfiguracji o wybrane dodatki
         Konf[6]=KonfAdds[6];
