@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Office{
+public class Office extends Main{
     // cena
     public static double Price = 0;
     // moc
