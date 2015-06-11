@@ -205,6 +205,7 @@ public class Additionals extends Main{
 
 
         double Price3=maxPrice;
+        double PriceTemp=0;
 
         System.out.println();
         System.out.println();
@@ -217,7 +218,9 @@ public class Additionals extends Main{
             Konf[7] += st7.nextToken() + ",";
             Price += Double.parseDouble(st7.nextToken());
         }
+        PriceTemp+=Price;
         Price3-=Price;
+        Price=0;
 
 
         System.out.println();
@@ -231,7 +234,9 @@ public class Additionals extends Main{
             Konf[6] += st6.nextToken() + ",";
             Price += Double.parseDouble(st6.nextToken());
         }
+        PriceTemp+=Price;
         Price3-=Price;
+        Price=0;
 
         System.out.println("\nPozostało Ci: "+Price3);
         String Sou = Sou(Price3);
@@ -241,7 +246,9 @@ public class Additionals extends Main{
             Price += Double.parseDouble(st12.nextToken());
             Power += 20;
         }
+        PriceTemp+=Price;
         Price3-=Price;
+        Price=0;
 
         System.out.println("\nPozostało Ci: "+Price3);
         String Dr = Dr(Price3);
@@ -251,16 +258,19 @@ public class Additionals extends Main{
             Price += Double.parseDouble(st13.nextToken());
             Power += 25;
         }
+        PriceTemp+=Price;
         Price3-=Price;
+        Price=0;
 
 
         // wypisanie konfiguracji
         //System.out.println("Konfiguracja: "+Konf[0]+"|"+Konf[1]+"|"+Konf[2]+"|"+Konf[3]+"|"+Konf[4]+"|"+Konf[5]+"|"+Konf[6]+"|"+Konf[7]+"|"+Konf[8]+"|"+Konf[9]+"|"+Konf[10]+"|"+Konf[11]+"|"+Konf[12]+"|"+Konf[13]+"|"+Konf[14]);
         System.out.println();
-        System.out.println("Cena (Akcesoria): "+Price);
+        System.out.println("Cena (Akcesoria): "+PriceTemp);
         System.out.println("Moc (Akcesoria): "+Power);
+        System.out.println("\nPozostało Ci: "+Price3);
         String [] RET = new String[17];
-        RET[15] = String.valueOf(Price);
+        RET[15] = String.valueOf(PriceTemp);
         RET[16] = String.valueOf(Power);
         for(int i=0; i<15; i++)
             RET[i]=Konf[i];
