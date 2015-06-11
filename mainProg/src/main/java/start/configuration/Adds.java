@@ -179,7 +179,7 @@ public class Adds extends Main{
         if(temp!=-1) {
             Sid += temp;
             Sid += ",";
-            Sid += Double.parseDouble(danych.DRIVE[temp][6]);
+            Sid += Double.parseDouble(danych.DRIVE[temp][7]);
             Sid += ";";
         }
         return Sid;
