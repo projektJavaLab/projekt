@@ -65,15 +65,17 @@ public class Run {
         System.out.println("3 - wymagająca firma");
         System.out.println("4 - dla graczy");
         String kasa;
+        int kasa2 = 0;
         String wybor;
         Scanner in = new Scanner(System.in);
         wybor = in.nextLine();
-        System.out.println("Ile maksymalnie chcesz wydać na ten zestaw?");
-        kasa = in.nextLine();
+
         boolean ok=true;
         while(ok) {
             switch (Integer.parseInt(wybor)) {
                 case 1:
+                    System.out.println("Ile maksymalnie chcesz wydać na ten zestaw?");
+                    kasa = in.nextLine();
                     Home ho = new Home();
                     while (Integer.parseInt(kasa) < 2000) {
                         System.out.println("Minimalna cena by złożyć ten zestaw to 2000 zl");
@@ -81,41 +83,54 @@ public class Run {
 
                     }
                     Konf = ho.Start(Integer.parseInt(kasa));
-                    ok=false;
+                    ok = false;
+                    kasa2 = Integer.parseInt(kasa);
                     break;
                 case 2:
+                    System.out.println("Ile maksymalnie chcesz wydać na ten zestaw?");
+                    kasa = in.nextLine();
                     Office of = new Office();
                     while (Integer.parseInt(kasa) < 1200) {
                         System.out.println("Minimalna cena by złożyć ten zestaw to 1200 zl");
                         kasa = in.nextLine();
                     }
                     Konf = of.Start(Integer.parseInt(kasa));
-                    ok=false;
+                    ok = false;
+                    kasa2 = Integer.parseInt(kasa);
                     break;
                 case 3:
+                    System.out.println("Ile maksymalnie chcesz wydać na ten zestaw?");
+                    kasa = in.nextLine();
                     HighCompany HC = new HighCompany();
                     while (Integer.parseInt(kasa) < 3500) {
                         System.out.println("Minimalna cena by złożyć ten zestaw to 3500 zl");
                         kasa = in.nextLine();
                     }
                     Konf = HC.Start(Integer.parseInt(kasa));
-                    ok=false;
+                    ok = false;
+                    kasa2 = Integer.parseInt(kasa);
                     break;
                 case 4:
+                    System.out.println("Ile maksymalnie chcesz wydać na ten zestaw?");
+                    kasa = in.nextLine();
                     Gaming Game = new Gaming();
-                    while (Integer.parseInt(kasa) < 4000) {
-                        System.out.println("Minimalna cena by złożyć ten zestaw to 4000 zl");
+                    while (Integer.parseInt(kasa) < 4500) {
+                        System.out.println("Minimalna cena by złożyć ten zestaw to 4500 zl");
                         kasa = in.nextLine();
                     }
                     Konf = Game.Start(Integer.parseInt(kasa));
-                    ok=false;
+                    ok = false;
+                    kasa2 = Integer.parseInt(kasa);
                     break;
                 default:
                     System.out.println("Zły wybór!");
+                    System.out.println("Podaj poprawny numer konfiguracji");
+                    wybor = in.nextLine();
                     break;
             }
+        }
             Additionals adds = new Additionals();
-            KonfAdds = adds.Start(Integer.parseInt(kasa)-parseDouble(Konf[15]));
+            KonfAdds = adds.Start(kasa2-parseDouble(Konf[15]));
 
             //aktualizacja konfiguracji o wybrane dodatki
             Konf[6]=KonfAdds[6];
@@ -124,7 +139,6 @@ public class Run {
             Konf[13]=KonfAdds[13];
             Konf[15]= String.valueOf(parseDouble(Konf[15])+parseDouble(KonfAdds[15]));
             Konf[16]= String.valueOf(parseDouble(Konf[16])+parseDouble(KonfAdds[16]));
-        }
         /*Home ho = new Home();
         Konf = ho.Start(2500);
 
