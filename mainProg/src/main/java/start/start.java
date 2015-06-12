@@ -102,7 +102,7 @@ public class start {
             } else if(wybor.equals("p")){
                 RunDyn rundyn = new RunDyn();
                 rundyn.main();
-                cena = rundyn.kasa2;
+                cena = Double.parseDouble(rundyn.Konf[15]);
                 proc = rundyn.Konf[0];
                 Main main = new Main();
                 main.Start(cena, proc);
