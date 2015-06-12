@@ -1,10 +1,10 @@
 package start;
 
-import start.Sale.Delivery;
 import start.Sale.Main;
 import start.baza.danych;
 import start.configuration.Resume;
 import start.configuration.Run;
+import start.dynamic.RunDyn;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -82,7 +82,7 @@ public class start {
         // start
         while(koniec)
         {
-        System.out.println("Wybierz co chcesz zrobic: k - konfiguracja, w - wznowienie konfiguracji, z - zakup, s - wyjscie");
+        System.out.println("Wybierz co chcesz zrobic: k - konfiguracja, p - konfiguracja pod zastosowanie, w - wznowienie konfiguracji, z - zakup, s - wyjscie");
         Scanner in = new Scanner(System.in);
         String wybor = in.nextLine();
         wybor.toLowerCase();
@@ -99,7 +99,15 @@ public class start {
                 proc = run.Konf[0];
                 Main main = new Main();
                 main.Start(cena, proc);
-            } else if (wybor.equals("k")) {
+            } else if(wybor.equals("p")){
+                RunDyn rundyn = new RunDyn();
+                rundyn.main();
+                cena = rundyn.kasa2;
+                proc = rundyn.Konf[0];
+                Main main = new Main();
+                main.Start(cena, proc);
+            }
+            else if (wybor.equals("k")) {
                 Run run = new Run();
                 run.Reset();
                 run.Start();
