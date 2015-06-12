@@ -14,7 +14,7 @@ public class Main {
         else
         {
             Zamowienie[0] = String.valueOf(Price);
-            System.out.println(Zamowienie[0]);
+            //System.out.println(Zamowienie[0]);
             Disc disc = new Disc();
             disc.Greeter();
             Zamowienie[1]=String.valueOf(Disc.proc_znizki());
