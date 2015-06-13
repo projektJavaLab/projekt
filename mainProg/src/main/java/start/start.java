@@ -1,9 +1,10 @@
 package start;
 
-import start.Sale.Delivery;
 import start.Sale.Main;
 import start.baza.danych;
+import start.configuration.Resume;
 import start.configuration.Run;
+import start.dynamic.RunDyn;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -44,6 +45,8 @@ public class start {
         output.readStringTab("chlodzenie.txt", danych.COOLING);
         // wczytywanie napędów
         output.readStringTab("napedy.txt", danych.DRIVE);
+        // wczytywanie zniżek
+        output.readStringTab("znizki.txt", danych.DISC);
         // testowanie
         //output.writeStringTab(danych.SCREEN);
         //System.out.println("");
@@ -75,37 +78,48 @@ public class start {
         //System.out.println("");
         //output.writeStringTab(danych.SOUNDCARD);
         //System.out.println("");
-
+//
         // start
         while(koniec)
         {
-        System.out.println("Wybierz co chcesz zrobic: k - konfiguracja, w - wznowienie konfiguracji, z - zakup, s - wyjscie");
+        System.out.println("Wybierz co chcesz zrobic: k - konfiguracja, p - konfiguracja pod zastosowanie, w - wznowienie konfiguracji, z - zakup, s - wyjscie");
         Scanner in = new Scanner(System.in);
         String wybor = in.nextLine();
         wybor.toLowerCase();
-            switch (wybor) {
-                case "w": {
-                    // wznowienie konfiguracji
-                    break;
-                }
-                case "k": {
-                    // konfiguracja
-                    Run run = new Run();
-                    run.Start();
-                    cena = run.Price;
-                    proc = run.Konf[0];
-                    break;
-                }
-                case "z": {
-                    // sprzedaz
-                    Main main = new Main();
-                    main.Start(cena, proc);
-                    break;
-                }
-                case "s": {
-                    // wyjscie
-                    return;
-                }
+            if (wybor.equals("w")) {
+                Run run = new Run();
+                Resume resume = new Resume();
+                resume.odczytKonf(run);
+                resume.odczytCenaMoc(run);
+                run.Start();
+                run = new Run();
+                run.Reset();
+                run.Start();
+                cena = run.Price;
+                proc = run.Konf[0];
+                Main main = new Main();
+                main.Start(cena, proc);
+            } else if(wybor.equals("p")){
+                RunDyn rundyn = new RunDyn();
+                rundyn.main();
+                cena = Double.parseDouble(rundyn.Konf[15]);
+                proc = rundyn.Konf[0];
+                Main main = new Main();
+                main.Start(cena, proc);
+            }
+            else if (wybor.equals("k")) {
+                Run run = new Run();
+                run.Reset();
+                run.Start();
+                cena = run.Price;
+                proc = run.Konf[0];
+                Main main = new Main();
+                main.Start(cena, proc);
+            } else if (wybor.equals("z")) {
+                Main main = new Main();
+                main.Start(cena, proc);
+            } else if (wybor.equals("s")) {
+                return;
             }
         }
 

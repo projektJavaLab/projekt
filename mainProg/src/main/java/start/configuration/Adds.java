@@ -18,7 +18,15 @@ public class Adds extends Main{
         int id=0;
         System.out.println("Podaj ID części, w celu zakończenia podaj 0");
         Scanner in = new Scanner(System.in);
-        id = in.nextInt();
+        try
+        {
+            id=Integer.parseInt(in.next());
+        }
+        catch (NumberFormatException n)
+        {
+            System.out.println("Niepoprawne dane !!!");
+            return ID();
+        }
         return id-1;
     }
     public String Acc() {
@@ -27,6 +35,11 @@ public class Adds extends Main{
         int temp;
         while (true){
             temp = ID();
+            while(danych.ACCESSORY.length < temp+1 || temp+1 < 0)
+            {
+                System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+                temp=ID();
+            }
             if(temp==-1) break;
             Sid += temp;
             Sid += ",";
@@ -42,6 +55,11 @@ public class Adds extends Main{
         int temp;
         while (true){
             temp = ID();
+            while(danych.SCREEN.length < temp+1 || temp+1 < 0)
+            {
+                System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+                temp=ID();
+            }
             if(temp==-1) break;
             Sid += temp;
             Sid += ",";
@@ -57,6 +75,11 @@ public class Adds extends Main{
         int temp;
         while (true){
             temp = ID();
+            while(danych.SOFTWARE.length < temp+1 || temp+1 < 0)
+            {
+                System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+                temp=ID();
+            }
             if(temp==-1) break;
             Sid += temp;
             Sid += ",";
@@ -71,6 +94,11 @@ public class Adds extends Main{
         output.writeStringTab(danych.OS);
         int temp;
         temp = ID();
+        while(danych.OS.length < temp+1 || temp+1 < 0)
+        {
+            System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+            temp=ID();
+        }
         if(temp!=-1) {
             Sid += temp;
             Sid += ",";
@@ -86,6 +114,11 @@ public class Adds extends Main{
         int temp;
         while (true) {
             temp = ID();
+            while(danych.COOLING.length < temp+1 || temp+1 < 0)
+            {
+                System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+                temp=ID();
+            }
             if(temp==-1) break;
             Sid += temp;
             Sid += ",";
@@ -100,6 +133,11 @@ public class Adds extends Main{
         output.writeStringTab(danych.NIC);
         int temp;
         temp = ID();
+        while(danych.NIC.length < temp+1 || temp+1 < 0)
+        {
+            System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+            temp=ID();
+        }
         if(temp!=-1) {
             Sid += temp;
             Sid += ",";
@@ -114,6 +152,11 @@ public class Adds extends Main{
         output.writeStringTab(danych.SOUNDCARD);
         int temp;
         temp = ID();
+        while(danych.SOUNDCARD.length < temp+1 || temp+1 < 0)
+        {
+            System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+            temp=ID();
+        }
         if(temp!=-1) {
             Sid += temp;
             Sid += ",";
@@ -128,6 +171,11 @@ public class Adds extends Main{
         output.writeStringTab(danych.DRIVE);
         int temp;
         temp = ID();
+        while(danych.DRIVE.length < temp+1 || temp+1 < 0)
+        {
+            System.out.println("Podano numer z poza zakresu, wybierz ID z podanego zbioru");
+            temp=ID();
+        }
         if(temp!=-1) {
             Sid += temp;
             Sid += ",";

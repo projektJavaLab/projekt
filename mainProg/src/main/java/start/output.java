@@ -45,7 +45,7 @@ public class output {
         }
     }
 
-    static void readStringTab(String plik, String [][]tab) throws FileNotFoundException {
+    public static void readStringTab(String plik, String[][] tab) throws FileNotFoundException {
         Scanner skaner = new Scanner(new BufferedReader(new FileReader(plik)));
         for (int i = 0; i < tab.length; i++)
             for (int j = 0; j < tab[i].length; j++)

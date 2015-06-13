@@ -1,4 +1,4 @@
-1 ASUS E-Green_24x WewnÄ™trzny CD/DVD SATA 4 80
-2 ASUS BW-12D1S-U ZewnÄ™trzny CD/DVD/Blu-ray USB3.0 3 550
-3 Lite-On DVD-ROM WewnÄ™trzny CD/DVD SATA 5 70
-4 LG BD-R WewnÄ™trzny CD/DVD/Blu-ray SATA 2 310
+1 ASUS_E-Green_24x Wewnêtrzny CD/DVD SATA 4 80
+2 ASUS_BW-12D1S-U Zewnêtrzny CD/DVD/Blu-ray USB3.0 3 550
+3 Lite-On_DVD-ROM Wewnêtrzny CD/DVD SATA 5 70
+4 LG_BD-R Wewnêtrzny CD/DVD/Blu-ray SATA 2 310
