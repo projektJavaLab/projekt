@@ -1,0 +1,10 @@
+1 Symantec_Norton_Security_2015_PL_1st_12m 115 4 Antywirus
+2 Microsoft_Office_2013_Home&Student_PKC 489 3 Pakiet_biurowy
+3 AutoDesk_Autodesk_AutoCAD_LT_2015_Commercial_New_SL 5712 5 CAD/CAM
+4 Microsoft_Office_365_Personal 199 3 Pakiet_biurowy
+5 Microsoft_Office_2013_Home&Business_(PKC) 799 6 Pakiet_biurowy
+6 Adobe_Photoshop_Elements_13_PL_Box 329 3 Pakiet_graficzny
+7 Corel_CorelDRAW_Graphics_Suite_X7_PL_Box 1299 2 Pakiet_graficzny
+8 Eset_Security_Pack_Box_3_PC_+_3_smartfony_(12m.) 199 3 Antywirus
+9 Eset_Security_Pack_Box_3_PC_+​_3_smartfony_(36m.) 369 2 Antywirus
+10 Kaspersky_Internet_Security_Multi-​Device_PL_Box_10st._(24m.) 739 1 Antywirus

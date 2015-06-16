@@ -1,0 +1,10 @@
+1 HDD Seagate 1 4 230
+2 HDD Seagate 2 4 320
+3 HDD WD_Caviar 3 3 460
+4 HDD WD_Caviar 0.5 1 220
+5 HDD Seagate 4 2 630
+6 SSD Adata 0.128 5 280
+7 SSD Crucial 0.250 4 410
+8 SSD Kingston 0.240 4 410
+9 SSD Plextor 0.256 3 550
+10 SSD SAMSUNG 0.5 2 930

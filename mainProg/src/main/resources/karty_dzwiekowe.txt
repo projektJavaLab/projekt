@@ -1,0 +1,6 @@
+1 Creative SoundBlaster-Audigy-SE 100 nie nie 1 89
+2 Asus Xonar-D1 116 nie nie 2 274
+3 Asus Xonar-DX/XD 116 nie nie 5 299
+4 Asus Xonar-Essence-ST 120 tak tak 3 809
+5 Asus Xonar-Phoebus 118 tak tak 4 894
+6 Creative SoundBlaster-VX 100 nie nie 15 59

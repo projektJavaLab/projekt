@@ -1,0 +1,14 @@
+1 SilentumPC Mistral wentylator 120 25 19
+2 BeQuiet Pure-Wings-2 wentylator 120 15 45
+3 Antec TrueQuiet wentylator 120 10 39
+4 SilentumPX Zephyr wentylator 140 20 21
+5 ENERMAX T.B.Silence wentylator 140 3 38
+6 BeQuiet Silent-Wings-2 wentylator 140 9 85
+7 BeQuiet Pure-Wings-2 wentylator 140 11 49
+8 SilentumPC Spartan-LT-HE922 chlodzenie_CPU 135 6 59
+9 Scythe Tatsumi chlodzenie_CPU 146 3 122
+10 BeQuite Pure-Rock chlodzenie_CPU 155 5 129
+11 SilentumPC Fortis-2-XE1226 chlodzenie_CPU 155 20 139
+12 Corsair H40 chlodzenie_wodne 0 2 250
+13 Corsair H80i chlodzenie_wodne 0 2 399
+14 CoolerMaster Nepton-240M chlodzenie_wodne 0 3 444

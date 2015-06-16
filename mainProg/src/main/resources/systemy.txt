@@ -1,0 +1,8 @@
+1 MS_Win Pro_8.1_x32/x64 BOX POLSKA 1 950
+2 MS_Win Home_Prem_7_SP1_x64 OEM ANGIELSKA 3 450
+3 Linux Fedora_x32/x64 GNU/GPL KAŻDA INF 0
+4 MS_Win 8.1_x64 OEM Polska 4 450
+5 MS_Win Server_2008_R2_Enterprise_x64 DOEM ANGIELSKA 2 1000
+6 MS_Win Server_2012_R2_Standard_x64 OEM POLSKA 1 3250
+7 MS_Win 8_Pro_x64 OEM Polska 5 640
+8 MS_Win 7_Home_Premium_x32 OEM Polska 7 440

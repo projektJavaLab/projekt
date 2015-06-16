@@ -47,38 +47,6 @@ public class start {
         output.readStringTab("napedy.txt", danych.DRIVE);
         // wczytywanie zniżek
         output.readStringTab("znizki.txt", danych.DISC);
-        // testowanie
-        //output.writeStringTab(danych.SCREEN);
-        //System.out.println("");
-        //output.writeStringTab(danych.SOFTWARE);
-        //System.out.println("");
-        //output.writeStringTab(danych.ACCESSORY);
-        //System.out.println("");
-        //output.writeStringTab(danych.RAM);
-        //System.out.println("");
-        //output.writeStringTab(danych.PROCESSOR);
-        //System.out.println("");
-        //output.writeStringTab(danych.HARDDRIVE);
-        //System.out.println("");
-        //output.writeStringTab(danych.GRAPHICCARD);
-        //System.out.println("");
-        //output.writeStringTab(danych.DRIVE);
-        //System.out.println("");
-        //output.writeStringTab(danych.MOTHERBOARD);
-        //System.out.println("");
-        //output.writeStringTab(danych.OS);
-        //System.out.println("");
-        //output.writeStringTab(danych.POWERSUPPLY);
-        //System.out.println("");
-        //output.writeStringTab(danych.CASE);
-        //System.out.println("");
-        //output.writeStringTab(danych.NIC);
-        //System.out.println("");
-        //output.writeStringTab(danych.COOLING);
-        //System.out.println("");
-        //output.writeStringTab(danych.SOUNDCARD);
-        //System.out.println("");
-//
         // start
         while(koniec)
         {
