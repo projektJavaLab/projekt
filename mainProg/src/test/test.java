@@ -1,4 +1,6 @@
 import org.junit.Assert;
+import start.Sale.Delivery;
+import start.Sale.Disc;
 import start.Sale.Payment;
 import start.Sale.Price;
 import start.baza.danych;
@@ -37,8 +39,16 @@ public class test {
         System.out.println("Test pierwszy zakończony pomyślnie");
     }
     @org.junit.Test
-    public void test2() throws Exception {
-
+        public void test2() throws Exception {
+        assertEquals(Gaming.Price,0,0);
+        assertEquals(HighCompany.Price,0,0);
+        assertEquals(Home.Price,0,0);
+        assertEquals(Office.Price,0,0);
+        assertEquals(Additionals.Price,0,0);
+        assertEquals(Delivery.fee,0,0);
+        assertEquals(Disc.proc_znizki(),1,0);
+        assertEquals(Disc.procent,1,0);
+        System.out.println("Test drugi zakończony pomyślnie");
 
     }
     @org.junit.Test
