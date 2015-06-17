@@ -81,11 +81,6 @@ public class test {
             assertNotNull(danych.PROCESSOR[i].length);
         for(int i=0;i<danych.RAM.length;i++)
             assertNotNull(danych.RAM[i].length);
-
-        for(int i=0;i<danych.MOTHERBOARD.length;i++)
-            assertNotNull(danych.MOTHERBOARD[i][8]);
-        for(int i=0;i<danych.RAM.length;i++)
-            assertNotNull(danych.RAM[i][7]);
         System.out.println("Test trzeci zakończony pomyślnie");
     }
     @org.junit.Test
