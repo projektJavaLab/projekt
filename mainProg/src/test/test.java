@@ -66,6 +66,7 @@ public class test {
         double p = Double.parseDouble(danych.PROCESSOR[1][7]);
         assertNotNull(danych.PROCESSOR[1][7]);
         assertEquals(530, p, 0);
+        assertEquals(530,g.Price(1),0);
         assertEquals(140, Double.parseDouble(danych.PROCESSOR[4][7]), 0);
 
         assertNotSame(g,g2);
