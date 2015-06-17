@@ -1,11 +1,13 @@
 import org.junit.Assert;
+import start.Sale.Payment;
+import start.Sale.Price;
 import start.baza.danych;
 import start.configuration.Adds;
 
 import org.junit.Assert.*;
+import start.dynamic.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 
 /**
@@ -34,7 +36,8 @@ public class test {
     }
     @org.junit.Test
     public void test2() throws Exception {
-        //
+
+
     }
     @org.junit.Test
     public void test3() throws Exception {
@@ -46,6 +49,15 @@ public class test {
     }
     @org.junit.Test
     public void test5() throws Exception {
-        //
+        assertNotNull(RunDyn.Konf);
+        assertNotNull(RunDyn.kasa2);
+        assertNotNull(RunDyn.class);
+        assertNotNull(Gaming.Price);
+        assertNotNull(Additionals.Price);
+        assertNotNull(HighCompany.Price);
+        assertNotNull(Home.Price);
+        assertNotNull(Main.class);
+        assertNotNull(Office.Price);
+        System.out.println("Test ostatni zakończony pomyślnie");
     }
 }
