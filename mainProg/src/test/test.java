@@ -1,7 +1,11 @@
 import org.junit.Assert;
 import start.baza.danych;
+import start.configuration.Adds;
 
-import static org.junit.Assert.*;
+import org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 
 /**
@@ -28,15 +32,19 @@ public class test {
         assertNotNull(danych.DISC);
         System.out.println("Test pierwszy zakończony pomyślnie");
     }
+    @org.junit.Test
     public void test2() throws Exception {
         //
     }
+    @org.junit.Test
     public void test3() throws Exception {
         //
     }
+    @org.junit.Test
     public void test4() throws Exception {
         //
     }
+    @org.junit.Test
     public void test5() throws Exception {
         //
     }
