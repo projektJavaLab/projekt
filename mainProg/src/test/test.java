@@ -11,6 +11,8 @@ import start.configuration.Run;
 import start.dynamic.*;
 import start.output;
 
+import start.Sale.Disc;
+
 import static org.junit.Assert.*;
 
 
@@ -55,7 +57,31 @@ public class test {
     }
     @org.junit.Test
     public void test3() throws Exception {
-        //
+        assertNotNull(danych.ACCESSORY.length);
+        assertNotNull(danych.CASE.length);
+        assertNotNull(danych.GRAPHICCARD.length);
+        assertNotNull(danych.HARDDRIVE.length);
+        assertNotNull(danych.MOTHERBOARD.length);
+        assertNotNull(danych.POWERSUPPLY.length);
+        assertNotNull(danych.PROCESSOR.length);
+        assertNotNull(danych.RAM.length);
+        for(int i=0;i<danych.ACCESSORY.length;i++)
+            assertNotNull(danych.ACCESSORY[i].length);
+        for(int i=0;i<danych.CASE.length;i++)
+            assertNotNull(danych.CASE[i].length);
+        for(int i=0;i<danych.GRAPHICCARD.length;i++)
+            assertNotNull(danych.GRAPHICCARD[i].length);
+        for(int i=0;i<danych.HARDDRIVE.length;i++)
+            assertNotNull(danych.HARDDRIVE[i].length);
+        for(int i=0;i<danych.MOTHERBOARD.length;i++)
+            assertNotNull(danych.MOTHERBOARD[i].length);
+        for(int i=0;i<danych.POWERSUPPLY.length;i++)
+            assertNotNull(danych.POWERSUPPLY[i].length);
+        for(int i=0;i<danych.PROCESSOR.length;i++)
+            assertNotNull(danych.PROCESSOR[i].length);
+        for(int i=0;i<danych.RAM.length;i++)
+            assertNotNull(danych.RAM[i].length);
+        System.out.println("Test trzeci zakończony pomyślnie");
     }
     @org.junit.Test
     public void test4() throws Exception {
