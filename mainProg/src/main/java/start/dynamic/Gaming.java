@@ -12,7 +12,7 @@ public class Gaming extends Main {
     // cena
     public static double Price = 0;
     // moc
-    int Power = 0;
+    public int Power = 0;
     String Socket="";
     // tablica przechowująca indexy do częsci
     // 0-procesor, 1-płyta główna, 2-ram, 3-karta graficzna, 4-obudowa, 5-dysk, 6-akcesoria, 7-monitory, 8-systemy, 9-oprogramowanie, 10-chłodzenie, 11-karty sieciowe, 12-karty dźwiękowe, 13-napęd, 14-zasilacz

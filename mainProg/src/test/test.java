@@ -5,7 +5,9 @@ import start.baza.danych;
 import start.configuration.Adds;
 
 import org.junit.Assert.*;
+import start.configuration.Run;
 import start.dynamic.*;
+import start.output;
 
 import static org.junit.Assert.*;
 
@@ -45,7 +47,29 @@ public class test {
     }
     @org.junit.Test
     public void test4() throws Exception {
-        //
+        Run r = new Run();
+        RunDyn rd = new RunDyn();
+        Gaming g = new Gaming();
+        Gaming g2 = new Gaming();
+
+        assertEquals(0, r.Price, 0);
+        assertEquals(0, rd.kasa2, 0);
+        assertEquals(0, g.Power, 0);
+        int [] temp = new int[]{1,2,3,4,5,6,7,8,9,10};
+        assertArrayEquals(temp, g.HD);
+
+        assertNull(danych.PROCESSOR[1][7]);
+        assertNull(danych.HARDDRIVE[2][3]);
+        assertNull(danych.GRAPHICCARD[4][4]);
+
+        output.readStringTab("../procesory.txt", danych.PROCESSOR);
+        double p = Double.parseDouble(danych.PROCESSOR[1][7]);
+        assertNotNull(danych.PROCESSOR[1][7]);
+        assertEquals(530, p, 0);
+        assertEquals(140, Double.parseDouble(danych.PROCESSOR[4][7]), 0);
+
+        assertNotSame(g,g2);
+        System.out.println("Test czwarty zakończony pomyślnie");
     }
     @org.junit.Test
     public void test5() throws Exception {
