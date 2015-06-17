@@ -1,7 +1,8 @@
 import org.junit.Assert;
-import start.*;
+import start.baza.danych;
 
 import static org.junit.Assert.*;
+
 
 /**
  * Created by Michał on 2015-04-23.
@@ -9,8 +10,23 @@ import static org.junit.Assert.*;
 public class test {
     @org.junit.Test
     public void test1() throws Exception {
-        //boolean test = start.read();
-        //assertEquals(true, test);
+        assertNotNull(danych.CASE);
+        assertNotNull(danych.PROCESSOR);
+        assertNotNull(danych.MOTHERBOARD);
+        assertNotNull(danych.RAM);
+        assertNotNull(danych.ACCESSORY);
+        assertNotNull(danych.HARDDRIVE);
+        assertNotNull(danych.GRAPHICCARD);
+        assertNotNull(danych.SOUNDCARD);
+        assertNotNull(danych.POWERSUPPLY);
+        assertNotNull(danych.OS);
+        assertNotNull(danych.SOFTWARE);
+        assertNotNull(danych.SCREEN);
+        assertNotNull(danych.NIC);
+        assertNotNull(danych.COOLING);
+        assertNotNull(danych.DRIVE);
+        assertNotNull(danych.DISC);
+        System.out.println("Test pierwszy zakończony pomyślnie");
     }
     public void test2() throws Exception {
         //
