@@ -45,10 +45,12 @@ public class test {
         assertEquals(Home.Price,0,0);
         assertEquals(Office.Price,0,0);
         assertEquals(Additionals.Price,0,0);
+        assertEquals(RunDyn.kasa2,0,0);
         assertEquals(Delivery.fee,0,0);
         assertEquals(Disc.proc_znizki(),1,0);
         assertEquals(Disc.procent,1,0);
         System.out.println("Test drugi zakończony pomyślnie");
+
 
     }
     @org.junit.Test
