@@ -13,7 +13,7 @@ public class start {
     static double cena=0.0;
     static String proc="";
     static boolean koniec=true;
-    public static void main(String[] args) throws FileNotFoundException {
+    public static boolean read() throws FileNotFoundException {
         // wczytanie do bazy z plików listy części
         // wczytywanie obudów
         output.readStringTab("obudowy.txt", danych.CASE);
@@ -47,6 +47,10 @@ public class start {
         output.readStringTab("napedy.txt", danych.DRIVE);
         // wczytywanie zniżek
         output.readStringTab("znizki.txt", danych.DISC);
+        return true;
+    }
+    public static void main(String[] args) throws FileNotFoundException {
+        read();
         // start
         while(koniec)
         {
