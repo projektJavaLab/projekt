@@ -6,4 +6,4 @@ https://github.com/projektJavaLab/projekt/wiki
 
 ///////////////////////////////////////////////
 
-Projekt wersja 0.2 pre alpha.
+Projekt wersja 1.0 FINAL, Build 9600 RTM OEM.
